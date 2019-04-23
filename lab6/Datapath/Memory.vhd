@@ -12,8 +12,7 @@ entity Memory is
 	port(CLK,RST,CS,WR,RD : in std_logic;
 	     ADRESS : in std_logic_vector(10 downto 0);
 	     DATA_IN : in signed(7 downto 0);
-	     DATA_OUT : out signed(7 downto 0)
-	     );
+	     DATA_OUT : out signed(7 downto 0));
 end entity;
 
 architecture behaviour of Memory is

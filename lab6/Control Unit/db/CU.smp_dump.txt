@@ -1,0 +1,11 @@
+
+State Machine - |FSM|PS
+Name PS.S7 PS.S6 PS.S5 PS.S4 PS.S3 PS.S2 PS.S1 PS.IDLE 
+PS.IDLE 0 0 0 0 0 0 0 0 
+PS.S1 0 0 0 0 0 0 1 1 
+PS.S2 0 0 0 0 0 1 0 1 
+PS.S3 0 0 0 0 1 0 0 1 
+PS.S4 0 0 0 1 0 0 0 1 
+PS.S5 0 0 1 0 0 0 0 1 
+PS.S6 0 1 0 0 0 0 0 1 
+PS.S7 1 0 0 0 0 0 0 1 

@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 entity counter_Nbit is
 	generic(N : integer := 16);
 	port(enable, clock, clear : in std_logic;
-		   TC : out std_logic_vector(N-1 downto 0));
+		   output : out std_logic_vector(N-1 downto 0));
 end entity;
 
 architecture structural of counter_Nbit is
@@ -23,5 +23,5 @@ architecture structural of counter_Nbit is
 		end generate;
 		TFF_X : tflipflop port map(T(i), clock, clear, Q_neg(i), Q(i));
 	end generate;
-	TC <= Q;
+	output <= Q;
 end architecture;

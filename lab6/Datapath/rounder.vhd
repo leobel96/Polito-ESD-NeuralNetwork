@@ -27,7 +27,7 @@ begin
 						DATA_OUT <= "01111111";
 					end if;
 				 else
-					DATA_OUT <= DATA_IN(7 downto 0);
+					DATA_OUT <= DATA_IN(11) & DATA_IN(6 downto 0);
 				end if;
 			else
 				DATA_OUT <= (others =>'0');
