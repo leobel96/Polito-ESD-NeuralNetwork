@@ -1,0 +1,41 @@
+-- Moltiplicatore con sommatore
+-- CLK -> Clock
+-- RST -> Reset
+-- EN -> Enable
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_numeric.all
+
+entity Multiplier is
+	port(CLK,RST,EN : in std_logic;
+	     DATA_IN : in signed(7 downto 0);
+	     DATA_OUT : out signed(9 downto 0);
+	     );
+end entity;
+
+architecture behaviour of Multiplier 
+
+component Adder 
+	generic(N := integer);
+	port(CLK,RST,EN,S: in std_logic;
+	     DATA1,DATA2 : in signed(N-1 downto 0);
+	     DATA_OUT : out signed(N-1 downto 0)
+	     );
+end component;
+
+signal TEMP_IN,ADDER_OUT : signed(11 downto 0);
+
+begin
+	s1 : Adder generic map(N <=  11)
+		   port map(CLK,RST,EN,1,TEMP_IN,DATA_IN,ADDER_OUT);
+
+	if RST = '0' then
+		TEMP_IN <= (others=>'0');
+		DATA_OUT <= (others=>'0');
+	elsif CLK'event and CLK = '1' then
+		if EN = '1' then
+			TEMP_IN <= DATA_IN & others=>'0';
+			DATA_OUT <= ADDER_OUT(9 downto 0);
+		end if;
+	end if;	
+end architecture;
