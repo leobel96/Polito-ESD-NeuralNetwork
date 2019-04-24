@@ -13,7 +13,7 @@ END FSM;
 
 ARCHITECTURE Behavioural OF FSM IS
 	
-	TYPE State_type IS (IDLE, S1, S2, S3, S4, S5, S6, S7);
+	TYPE State_type IS (IDLE, S1, S2, S3, S4, S5, S6, S7, S8);
 	SIGNAL PS, NS: State_type;
 
 	BEGIN
@@ -47,21 +47,30 @@ ARCHITECTURE Behavioural OF FSM IS
 			WHEN S5=>	
 				IF(OUT_ROUND_7 = '0') THEN 
 					NS <= S6;
-				ELSIF(TC_CNT_1 = '1') THEN
-					NS <= S7;
 				ELSE
-					NS <= S2;
+					NS <= S7;
 				END IF;
 								
 			WHEN S6=>	
 				IF(TC_CNT_1 = '1') THEN
-					NS <= S7;
+					NS <= S8;
+				ELSE
+					NS <= S2;
+				END IF;
+				
+			WHEN S7=>	
+				IF(TC_CNT_1 = '1') THEN
+					NS <= S8;
 				ELSE
 					NS <= S2;
 				END IF;
 								
-			WHEN S7=>	
-				NS <= IDLE;
+			WHEN S8=>
+				IF(START = '1') THEN
+					NS <= IDLE;
+				ELSE
+					NS <= S8;
+				END IF;
 								
 			WHEN OTHERS => 
 				NS <= IDLE;
@@ -135,12 +144,15 @@ ARCHITECTURE Behavioural OF FSM IS
 			WHEN S5=>	
 				CS_MEM_B <= '1';
 				WR_MEM_B <= '0';
-				EN_CNT_1 <= '1';
 								
 			WHEN S6=>	
 				EN_CNT_2 <= '1';
+				EN_CNT_1 <= '1';
 								
 			WHEN S7=>	
+				EN_CNT_1 <= '1';
+				
+			WHEN S8=>
 				DONE <= '1';
 								
 			WHEN OTHERS =>

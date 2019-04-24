@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CU
-Tue Apr 23 18:33:02 2019
+Wed Apr 24 19:08:53 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -41,15 +41,15 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 23 18:33:02 2019        ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr 24 19:08:53 2019        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; CU                                           ;
 ; Top-level Entity Name              ; FSM                                          ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 13                                           ;
-;     Total combinational functions  ; 10                                           ;
-;     Dedicated logic registers      ; 8                                            ;
-; Total registers                    ; 8                                            ;
+; Total logic elements               ; 14                                           ;
+;     Total combinational functions  ; 11                                           ;
+;     Dedicated logic registers      ; 9                                            ;
+; Total registers                    ; 9                                            ;
 ; Total pins                         ; 25                                           ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0                                            ;
@@ -165,27 +165,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 13    ;
+; Estimated Total logic elements              ; 14    ;
 ;                                             ;       ;
-; Total combinational functions               ; 10    ;
+; Total combinational functions               ; 11    ;
 ; Logic element usage by number of LUT inputs ;       ;
 ;     -- 4 input functions                    ; 3     ;
 ;     -- 3 input functions                    ; 3     ;
-;     -- <=2 input functions                  ; 4     ;
+;     -- <=2 input functions                  ; 5     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 10    ;
+;     -- normal mode                          ; 11    ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 8     ;
-;     -- Dedicated logic registers            ; 8     ;
+; Total registers                             ; 9     ;
+;     -- Dedicated logic registers            ; 9     ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 25    ;
 ; Maximum fan-out node                        ; PS.S2 ;
 ; Maximum fan-out                             ; 10    ;
-; Total fan-out                               ; 65    ;
-; Average fan-out                             ; 1.51  ;
+; Total fan-out                               ; 69    ;
+; Average fan-out                             ; 1.53  ;
 +---------------------------------------------+-------+
 
 
@@ -194,26 +194,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |FSM                       ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 25   ; 0            ; |FSM                ; work         ;
+; |FSM                       ; 11 (11)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 25   ; 0            ; |FSM                ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------+
-; State Machine - |FSM|PS                                                   ;
-+---------+-------+-------+-------+-------+-------+-------+-------+---------+
-; Name    ; PS.S7 ; PS.S6 ; PS.S5 ; PS.S4 ; PS.S3 ; PS.S2 ; PS.S1 ; PS.IDLE ;
-+---------+-------+-------+-------+-------+-------+-------+-------+---------+
-; PS.IDLE ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0       ;
-; PS.S1   ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 1       ;
-; PS.S2   ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 1       ;
-; PS.S3   ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 1       ;
-; PS.S4   ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 1       ;
-; PS.S5   ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 1       ;
-; PS.S6   ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1       ;
-; PS.S7   ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1       ;
-+---------+-------+-------+-------+-------+-------+-------+-------+---------+
++-----------------------------------------------------------------------------------+
+; State Machine - |FSM|PS                                                           ;
++---------+-------+-------+-------+-------+-------+-------+-------+-------+---------+
+; Name    ; PS.S8 ; PS.S7 ; PS.S6 ; PS.S5 ; PS.S4 ; PS.S3 ; PS.S2 ; PS.S1 ; PS.IDLE ;
++---------+-------+-------+-------+-------+-------+-------+-------+-------+---------+
+; PS.IDLE ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0       ;
+; PS.S1   ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 1       ;
+; PS.S2   ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 1       ;
+; PS.S3   ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 1       ;
+; PS.S4   ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 1       ;
+; PS.S5   ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 1       ;
+; PS.S6   ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1       ;
+; PS.S7   ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1       ;
+; PS.S8   ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1       ;
++---------+-------+-------+-------+-------+-------+-------+-------+-------+---------+
 
 
 +------------------------------------------------------+
@@ -221,7 +222,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 8     ;
+; Total registers                              ; 9     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -237,7 +238,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Apr 23 18:33:00 2019
+    Info: Processing started: Wed Apr 24 19:08:50 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CU -c CU
 Info: Found 2 design units, including 1 entities, in source file fsm.vhd
     Info: Found design unit 1: FSM-Behavioural
@@ -245,14 +246,14 @@ Info: Found 2 design units, including 1 entities, in source file fsm.vhd
 Info: Elaborating entity "FSM" for the top level hierarchy
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "RD_MEM_B" is stuck at GND
-Info: Implemented 38 device resources after synthesis - the final resource count might be different
+Info: Implemented 39 device resources after synthesis - the final resource count might be different
     Info: Implemented 4 input pins
     Info: Implemented 21 output pins
-    Info: Implemented 13 logic cells
+    Info: Implemented 14 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 247 megabytes
-    Info: Processing ended: Tue Apr 23 18:33:02 2019
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Processing ended: Wed Apr 24 19:08:53 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:04
 
 
