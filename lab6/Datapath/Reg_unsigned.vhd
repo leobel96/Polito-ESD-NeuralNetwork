@@ -5,9 +5,9 @@ USE ieee.numeric_std.all;
 ENTITY reg_unsigned IS
 GENERIC ( N : integer:=11);
 PORT (EN : in std_logic;
-		R : IN UNSIGNED(N-1 DOWNTO 0);
-		Clock, Resetn : IN STD_LOGIC;
-		Q : OUT UNSIGNED(N-1 DOWNTO 0));
+			R : IN UNSIGNED(N-1 DOWNTO 0);
+			Clock, Resetn : IN STD_LOGIC;
+			Q : OUT UNSIGNED(N-1 DOWNTO 0));
 END reg_unsigned;
 
 ARCHITECTURE Behavior OF reg_unsigned IS
