@@ -3,27 +3,27 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'EN_SUM_p'
-Slack : -4.765
-TNS   : -48.258
+Slack : -4.676
+TNS   : -50.846
 
 Type  : Slow 1200mV 85C Model Setup 'EN_P_p'
-Slack : -2.522
-TNS   : -23.328
+Slack : -2.442
+TNS   : -22.561
 
 Type  : Slow 1200mV 85C Model Setup 'CLK'
-Slack : -2.438
-TNS   : -29.113
+Slack : -2.287
+TNS   : -29.100
 
 Type  : Slow 1200mV 85C Model Hold 'CLK'
-Slack : 0.022
-TNS   : 0.000
+Slack : -0.022
+TNS   : -0.110
 
 Type  : Slow 1200mV 85C Model Hold 'EN_P_p'
-Slack : 1.072
+Slack : 1.074
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'EN_SUM_p'
-Slack : 1.689
+Slack : 1.661
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
@@ -39,27 +39,27 @@ Slack : -3.000
 TNS   : -3.000
 
 Type  : Slow 1200mV 0C Model Setup 'EN_SUM_p'
-Slack : -4.218
-TNS   : -42.664
+Slack : -4.120
+TNS   : -44.621
 
 Type  : Slow 1200mV 0C Model Setup 'EN_P_p'
-Slack : -2.216
-TNS   : -20.367
+Slack : -2.104
+TNS   : -19.558
 
 Type  : Slow 1200mV 0C Model Setup 'CLK'
-Slack : -2.163
-TNS   : -24.321
+Slack : -1.981
+TNS   : -23.857
 
 Type  : Slow 1200mV 0C Model Hold 'CLK'
-Slack : 0.035
+Slack : 0.001
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'EN_P_p'
-Slack : 1.017
+Slack : 1.015
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'EN_SUM_p'
-Slack : 1.553
+Slack : 1.530
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
@@ -75,32 +75,32 @@ Slack : -3.000
 TNS   : -3.000
 
 Type  : Fast 1200mV 0C Model Setup 'EN_SUM_p'
-Slack : -2.225
-TNS   : -21.279
+Slack : -2.158
+TNS   : -22.866
 
 Type  : Fast 1200mV 0C Model Setup 'CLK'
-Slack : -1.523
-TNS   : -16.341
+Slack : -1.495
+TNS   : -16.955
 
 Type  : Fast 1200mV 0C Model Setup 'EN_P_p'
-Slack : -0.900
-TNS   : -7.828
+Slack : -0.864
+TNS   : -7.560
 
 Type  : Fast 1200mV 0C Model Hold 'CLK'
-Slack : -0.005
-TNS   : -0.025
+Slack : -0.025
+TNS   : -0.125
 
 Type  : Fast 1200mV 0C Model Hold 'EN_P_p'
 Slack : 0.475
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'EN_SUM_p'
-Slack : 0.813
+Slack : 0.792
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -70.744
+TNS   : -70.741
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'EN_P_p'
 Slack : -3.000

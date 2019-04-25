@@ -22,46 +22,6 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-counter_Nbit
-# storage
-db|Datapath.(1).cnf
-db|Datapath.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-counter_nbit.vhd
-5341aebceb101ea27f56e2e0a0ff94f
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-n
-10
-PARAMETER_SIGNED_DEC
-USR
- constraint(tc)
-9 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-counter_Nbit:counter
-}
-# macro_sequence
-
-# end
-# entity
 tflipflop
 # storage
 db|Datapath.(2).cnf
@@ -271,18 +231,18 @@ Counter_positivi:positivo
 
 # end
 # entity
-Adder
+Datapath
 # storage
-db|Datapath.(6).cnf
-db|Datapath.(6).cnf
+db|Datapath.(0).cnf
+db|Datapath.(0).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-adder.vhd
-328a4991ecfd7173cef5c4235ad5778c
+datapath.vhd
+a0e0d6cdba0d48d98ff1f1f425ad5a3
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -294,43 +254,25 @@ ON
 AUTO_ROM_RECOGNITION
 ON
 }
-# user_parameter {
-n
-12
-PARAMETER_SIGNED_DEC
-USR
- constraint(data1)
-11 downto 0
-PARAMETER_STRING
-USR
- constraint(data2)
-11 downto 0
-PARAMETER_STRING
-USR
- constraint(data_out)
-11 downto 0
-PARAMETER_STRING
-USR
-}
 # hierarchies {
-Adder:sommatore
+|
 }
 # macro_sequence
 
 # end
 # entity
-Adder
+counter_Nbit
 # storage
-db|Datapath.(9).cnf
-db|Datapath.(9).cnf
+db|Datapath.(1).cnf
+db|Datapath.(1).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-adder.vhd
-328a4991ecfd7173cef5c4235ad5778c
+counter_nbit.vhd
+b46af6127248275882c5d6c8a352023
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -347,21 +289,13 @@ n
 10
 PARAMETER_SIGNED_DEC
 USR
- constraint(data1)
-9 downto 0
-PARAMETER_STRING
-USR
- constraint(data2)
-9 downto 0
-PARAMETER_STRING
-USR
- constraint(data_out)
+ constraint(output)
 9 downto 0
 PARAMETER_STRING
 USR
 }
 # hierarchies {
-Counter_positivi:positivo|Adder:Contatore
+counter_Nbit:counter
 }
 # macro_sequence
 
@@ -378,7 +312,7 @@ ON
 # case_insensitive
 # source_file
 mux3to1.vhd
-3e45efadb35746a0dcf9be959780c4db
+39ed5892a9cd22d0246bdfaf7286e431
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -420,18 +354,18 @@ Mux3to1:mux_in2
 
 # end
 # entity
-Datapath
+Adder
 # storage
-db|Datapath.(0).cnf
-db|Datapath.(0).cnf
+db|Datapath.(6).cnf
+db|Datapath.(6).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-datapath.vhd
-88bdd2ccd62f4c2957798219b512658
+adder.vhd
+55d0a7de3a5691bd32ef5d9347d3721
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -443,8 +377,26 @@ ON
 AUTO_ROM_RECOGNITION
 ON
 }
+# user_parameter {
+n
+12
+PARAMETER_SIGNED_DEC
+USR
+ constraint(data1)
+11 downto 0
+PARAMETER_STRING
+USR
+ constraint(data2)
+11 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_out)
+11 downto 0
+PARAMETER_STRING
+USR
+}
 # hierarchies {
-|
+Adder:sommatore
 }
 # macro_sequence
 
@@ -461,7 +413,7 @@ ON
 # case_insensitive
 # source_file
 rounder.vhd
-d3d0d22d449f56c099f320e162a1ceb5
+fbbe4ecb5c14999aefe8a582b1a8715
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -485,6 +437,54 @@ USR
 }
 # hierarchies {
 rounder:rounding
+}
+# macro_sequence
+
+# end
+# entity
+Adder
+# storage
+db|Datapath.(9).cnf
+db|Datapath.(9).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+adder.vhd
+55d0a7de3a5691bd32ef5d9347d3721
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+n
+10
+PARAMETER_SIGNED_DEC
+USR
+ constraint(data1)
+9 downto 0
+PARAMETER_STRING
+USR
+ constraint(data2)
+9 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_out)
+9 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+Counter_positivi:positivo|Adder:Contatore
 }
 # macro_sequence
 

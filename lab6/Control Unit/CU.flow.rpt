@@ -1,6 +1,6 @@
 Flow report for CU
-Wed Apr 24 19:09:14 2019
-Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+Thu Apr 25 10:52:32 2019
+Quartus II 32-bit Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
 
 
 ---------------------
@@ -19,7 +19,7 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2010 Altera Corporation
+Copyright (C) 1991-2011 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -35,27 +35,26 @@ applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Flow Summary                                                                      ;
-+------------------------------------+----------------------------------------------+
-; Flow Status                        ; Successful - Wed Apr 24 19:09:13 2019        ;
-; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
-; Revision Name                      ; CU                                           ;
-; Top-level Entity Name              ; FSM                                          ;
-; Family                             ; Cyclone II                                   ;
-; Device                             ; EP2C35F672C6                                 ;
-; Timing Models                      ; Final                                        ;
-; Met timing requirements            ; Yes                                          ;
-; Total logic elements               ; 13 / 33,216 ( < 1 % )                        ;
-;     Total combinational functions  ; 11 / 33,216 ( < 1 % )                        ;
-;     Dedicated logic registers      ; 9 / 33,216 ( < 1 % )                         ;
-; Total registers                    ; 9                                            ;
-; Total pins                         ; 25 / 475 ( 5 % )                             ;
-; Total virtual pins                 ; 0                                            ;
-; Total memory bits                  ; 0 / 483,840 ( 0 % )                          ;
-; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                               ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                ;
-+------------------------------------+----------------------------------------------+
++------------------------------------------------------------------------------------+
+; Flow Summary                                                                       ;
++------------------------------------+-----------------------------------------------+
+; Flow Status                        ; Successful - Thu Apr 25 10:52:32 2019         ;
+; Quartus II 32-bit Version          ; 11.1 Build 259 01/25/2012 SP 2 SJ Web Edition ;
+; Revision Name                      ; CU                                            ;
+; Top-level Entity Name              ; FSM                                           ;
+; Family                             ; Cyclone II                                    ;
+; Device                             ; EP2C35F672C6                                  ;
+; Timing Models                      ; Final                                         ;
+; Total logic elements               ; 13 / 33,216 ( < 1 % )                         ;
+;     Total combinational functions  ; 11 / 33,216 ( < 1 % )                         ;
+;     Dedicated logic registers      ; 9 / 33,216 ( < 1 % )                          ;
+; Total registers                    ; 9                                             ;
+; Total pins                         ; 26 / 475 ( 5 % )                              ;
+; Total virtual pins                 ; 0                                             ;
+; Total memory bits                  ; 0 / 483,840 ( 0 % )                           ;
+; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                 ;
++------------------------------------+-----------------------------------------------+
 
 
 +-----------------------------------------+
@@ -63,56 +62,57 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/24/2019 19:08:51 ;
+; Start date & time ; 04/25/2019 10:52:11 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; CU                  ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                     ;
-+--------------------------------------+--------------------------------+---------------+-------------+----------------+
-; Assignment Name                      ; Value                          ; Default Value ; Entity Name ; Section Id     ;
-+--------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 93328257122013.155612573012704 ; --            ; --          ; --             ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; test_a                         ; --            ; --          ; eda_simulation ;
-; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                           ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (VHDL)         ; <None>        ; --          ; --             ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                ; --            ; --          ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                             ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                              ; --            ; --          ; --             ;
-; PARTITION_COLOR                      ; 16764057                       ; --            ; FSM         ; Top            ;
-; PARTITION_NETLIST_TYPE               ; SOURCE                         ; --            ; FSM         ; Top            ;
-; TOP_LEVEL_ENTITY                     ; FSM                            ; CU            ; --          ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS   ; Off                            ; --            ; --          ; eda_blast_fpga ;
-+--------------------------------------+--------------------------------+---------------+-------------+----------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                      ;
++--------------------------------------+---------------------------------+---------------+-------------+----------------+
+; Assignment Name                      ; Value                           ; Default Value ; Entity Name ; Section Id     ;
++--------------------------------------+---------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID                ; 101949667617460.155618233111404 ; --            ; --          ; --             ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; test_a                          ; --            ; --          ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                            ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (VHDL)          ; <None>        ; --          ; --             ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                 ; --            ; --          ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                              ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                               ; --            ; --          ; --             ;
+; PARTITION_COLOR                      ; 16764057                        ; --            ; FSM         ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING           ; --            ; FSM         ; Top            ;
+; PARTITION_NETLIST_TYPE               ; SOURCE                          ; --            ; FSM         ; Top            ;
+; TOP_LEVEL_ENTITY                     ; FSM                             ; CU            ; --          ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS   ; Off                             ; --            ; --          ; eda_blast_fpga ;
++--------------------------------------+---------------------------------+---------------+-------------+----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                           ;
-+-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:03     ; 1.0                     ; 247 MB              ; 00:00:03                           ;
-; Fitter                  ; 00:00:09     ; 1.0                     ; 293 MB              ; 00:00:10                           ;
-; Assembler               ; 00:00:04     ; 1.0                     ; 269 MB              ; 00:00:04                           ;
-; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 174 MB              ; 00:00:01                           ;
-; EDA Netlist Writer      ; 00:00:00     ; 1.0                     ; 186 MB              ; 00:00:01                           ;
-; Total                   ; 00:00:17     ; --                      ; --                  ; 00:00:19                           ;
-+-------------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 351 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:07     ; 1.0                     ; 423 MB              ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 315 MB              ; 00:00:02                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 357 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 274 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:18     ; --                      ; --                  ; 00:00:13                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                          ;
-+-------------------------+------------------+---------------+------------+----------------+
-; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
-+-------------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis    ; DESKTOP-RT22PLK  ; Windows Vista ; 6.2        ; x86_64         ;
-; Fitter                  ; DESKTOP-RT22PLK  ; Windows Vista ; 6.2        ; x86_64         ;
-; Assembler               ; DESKTOP-RT22PLK  ; Windows Vista ; 6.2        ; x86_64         ;
-; Classic Timing Analyzer ; DESKTOP-RT22PLK  ; Windows Vista ; 6.2        ; x86_64         ;
-; EDA Netlist Writer      ; DESKTOP-RT22PLK  ; Windows Vista ; 6.2        ; x86_64         ;
-+-------------------------+------------------+---------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; DESKTOP-FG67L7P  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-FG67L7P  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-FG67L7P  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-FG67L7P  ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-FG67L7P  ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
@@ -120,8 +120,8 @@ applicable agreement for further details.
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off CU -c CU
 quartus_fit --read_settings_files=off --write_settings_files=off CU -c CU
+quartus_sta CU -c CU
 quartus_asm --read_settings_files=off --write_settings_files=off CU -c CU
-quartus_tan --read_settings_files=off --write_settings_files=off CU -c CU --timing_analysis_only
 quartus_eda --read_settings_files=off --write_settings_files=off CU -c CU
 
 

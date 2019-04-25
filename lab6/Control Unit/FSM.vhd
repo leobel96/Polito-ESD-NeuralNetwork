@@ -2,7 +2,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
 ENTITY FSM IS
-	PORT( CLK : IN STD_LOGIC;
+	PORT( CLK,RST: IN STD_LOGIC;
 				START, TC_CNT_1, OUT_ROUND_7 : IN STD_LOGIC;
         RESET, EN_CNT_1, CS_MEM_A, WR_MEM_A,
 				RD_MEM_A, CS_MEM_B, WR_MEM_B, RD_MEM_B,	EN_FF_1,
@@ -78,9 +78,11 @@ ARCHITECTURE Behavioural OF FSM IS
 		END CASE;					   
 	END PROCESS;
 				   
-	stateUpdate: PROCESS(CLK) -- aggiorno present state
+	stateUpdate: PROCESS(CLK,RST) -- aggiorno present state
 		BEGIN
-			IF CLK'EVENT AND CLK='1' THEN
+			IF RST = '0' then
+				PS <= S1;
+			ELSIF CLK'EVENT AND CLK='1' THEN
 					PS<=NS;
 			END IF;
 	END PROCESS;
