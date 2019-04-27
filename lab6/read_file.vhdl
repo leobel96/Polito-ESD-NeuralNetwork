@@ -13,7 +13,7 @@ file_read: process(reset,clk)
       if not endfile(input_file)then  --se non ha finito di leggere il file
         readline(input_file, input_line); --salva una riga del file in input_line
         read(input_line,input_tmp); --salva il numero nella riga in input_tmp
-        data_in <= to_signed(input_tmp,8); --converti input_tmp in std_logic
+        data_in <= to_signed(input_tmp,8); --converti input_tmp in signed
       end if;
     end if;
 end process;
