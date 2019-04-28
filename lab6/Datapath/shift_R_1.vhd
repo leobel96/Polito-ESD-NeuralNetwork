@@ -4,11 +4,15 @@ use ieee.numeric_std.all;
 
 entity shift_r_1 is
 	port (data_out_mem_a: in signed (7 downto 0);
-			  out_shift_r_1: out signed (7 downto 0));
+			  out_shift_r_1: out signed (11 downto 0));
 end entity;
 
 architecture structural of shift_r_1 is
 begin
+out_shift_r_1(11)<=data_out_mem_a(7);
+out_shift_r_1(10)<=data_out_mem_a(7);
+out_shift_r_1(9)<=data_out_mem_a(7);
+out_shift_r_1(8)<=data_out_mem_a(7);
 out_shift_r_1(7)<=data_out_mem_a(7); 
 out_shift_r_1(6)<=data_out_mem_a(7); 
 out_shift_r_1(5)<=data_out_mem_a(6);

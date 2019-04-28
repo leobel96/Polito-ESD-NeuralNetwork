@@ -21,22 +21,19 @@ architecture behaviour of Counter_positivi is
 	component HA
 		generic(N : integer:=11);
 		port(RST,EN: in std_logic;
-				 IN_1_HA,IN_2_HA : in std_logic_vector(N-1 downto 0);
-				 OUT_HA : out std_logic_vector(N-1 downto 0));
+				 IN_1_HA,IN_2_HA : in unsigned(N-1 downto 0);
+				 OUT_HA : out unsigned(N-1 downto 0));
 	end component;
 
-	signal IN_2_HA, OUT_HA : std_logic_vector(10 downto 0);
-	signal REG_OUT_UN, REG_IN_UN : unsigned(10 downto 0);
+	signal OUT_REG, OUT_HA : unsigned(10 downto 0);
 	
 	begin
-	REG_IN_UN <= unsigned(OUT_HA);
-	IN_2_HA <= std_logic_vector(REG_OUT_UN);
 	
 	HalfAdder : HA generic map(N=>11)
-								 port map(RST, EN, "00000000001", IN_2_HA, OUT_HA);
+								 port map(RST, EN, "00000000001", OUT_REG, OUT_HA);
 	reg : reg_unsigned generic map(N =>11)
-						 port map(EN, REG_IN_UN, CLK, RST, REG_OUT_UN);
+						 port map(EN, OUT_HA, CLK, RST, OUT_REG);
 	
-	OUT_CNT <= REG_OUT_UN;
+	OUT_CNT <= OUT_REG;
 
 end architecture;

@@ -30,7 +30,7 @@ end component;
 
 component shift_r_1
 	port (data_out_mem_a: in signed (7 downto 0);
-			  out_shift_r_1: out signed (7 downto 0));
+			  out_shift_r_1: out signed (11 downto 0));
 end component;
 
 component shift_l_4
@@ -56,9 +56,9 @@ component Counter_positivi
 	  	 OUT_CNT : out unsigned(10 downto 0));
 end component;
 
-component Mux3to1 
+component Mux3to1
 	port(IN1,IN2,IN3 : in signed(11 downto 0);
-	     S : in std_logic_vector(1 downto 0); 
+	     SEL : in std_logic_vector(1 downto 0); 
 	     OUT_DATA : out signed(11 downto 0));
 end component;
 
@@ -75,21 +75,28 @@ component rounder
 			 OUT_ROUND : out signed(7 downto 0));
 end component;
 
-signal TC_COUNTER : std_logic_vector(9 downto 0);
-signal D_FF_1, Q_FF_1, Q_FF_2, Q_FF_3, Q_FF_4, OUT_SHIFT_R_1, OUT_SHIFT_L_4, OUT_SHIFT_R_2 : signed(11 downto 0);
+signal OUT_CNT_1 : std_logic_vector(9 downto 0);
+signal Q_FF_3, Q_FF_4, OUT_SHIFT_R_1, OUT_SHIFT_L_4, OUT_SHIFT_R_2, IN_1_MUX_2, IN_2_MUX_2 : signed(11 downto 0);
 signal OUT_DATA_MUX1, OUT_DATA_MUX2, OUT_ADDER: signed(11 downto 0);
+signal D_FF_1, Q_FF_1, Q_FF_2 : signed(7 downto 0);
 signal OUT_CNT_2 : unsigned(10 downto 0);
 
 begin
 
+	shift_right_2 : shift_r_2 port map (Q_FF_4, out_shift_r_2);
+	shift_right_1 : shift_r_1 port map(data_out_mem_a, out_shift_r_1);
+	shift_left_4 : shift_l_4 port map(Q_FF_1, out_shift_l_4);
 	
-	ff_1 : reg_sig generic map(N=>12)
+	D_FF_1 <= DATA_OUT_MEM_A;
+	ff_1 : reg_sig generic map(N=>8)
 						 port map(CLK, EN_FF_1, RST_n, D_FF_1, Q_FF_1);	 
-	ff_2 : reg_sig generic map(N=>12)
+	ff_2 : reg_sig generic map(N=>8)
 						 port map(CLK, EN_FF_2, RST_n, Q_FF_1, Q_FF_2);
-						 
+	
 	mux_1: mux3to1 port map(Q_FF_3, OUT_SHIFT_R_1, OUT_SHIFT_L_4, SEL_MUX1, OUT_DATA_MUX1);
-	mux_2: mux3to1 port map(Q_FF_1, Q_FF_2, OUT_SHIFT_R_2, SEL_MUX2, OUT_DATA_MUX2);
+	in_1_mux_2 <= Q_FF_1(7) & Q_FF_1(7) & Q_FF_1(7) & Q_FF_1(7) & Q_FF_1;
+	in_2_mux_2 <= Q_FF_2(7) & Q_FF_2(7) & Q_FF_2(7) & Q_FF_2(7) & Q_FF_2;
+	mux_2: mux3to1 port map(in_1_mux_2, in_2_mux_2, OUT_SHIFT_R_2, SEL_MUX2, OUT_DATA_MUX2);
 	
 	sommatore : adder generic map(N=>12)
 										port map(RST_n, EN_ADDER, SUB_ADDER, OUT_DATA_MUX1, OUT_DATA_MUX2, OUT_ADDER);
@@ -107,9 +114,8 @@ begin
 	OUTPUT_PORT <= OUT_CNT_2;
 	ADDRESS_MEM <= OUT_CNT_1;
 					 
-	TC_CNT_1 <= TC_COUNTER(9) and TC_COUNTER(8) and TC_COUNTER(7) and TC_COUNTER(6) and 
-							TC_COUNTER(5) and TC_COUNTER(4) and TC_COUNTER(3) and TC_COUNTER(2) and
-							TC_COUNTER(1) and TC_COUNTER(0);	--SEGNALE DEL TERMINAL COUNTER
+	TC_CNT_1 <= OUT_CNT_1(9) and OUT_CNT_1(8) and OUT_CNT_1(7) and OUT_CNT_1(6) and 
+							OUT_CNT_1(5) and OUT_CNT_1(4) and OUT_CNT_1(3) and OUT_CNT_1(2) and
+							OUT_CNT_1(1) and OUT_CNT_1(0);	--SEGNALE DEL TERMINAL COUNTER
 	
-	D_FF_1 <= DATA_OUT_MEM_A(7) & DATA_OUT_MEM_A(7) & DATA_OUT_MEM_A(7) & DATA_OUT_MEM_A(7) & DATA_OUT_MEM_A;	 --ESPANSIONE DELL' INGRESSO
 end architecture;
