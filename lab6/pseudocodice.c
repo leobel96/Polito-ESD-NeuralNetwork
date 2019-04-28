@@ -5,7 +5,7 @@ uint16_t positiveNum;
 bool done = 0;
 
 for (int i=0; i < 1024; i++){
-  [i] = dataIn[i];
+  memA[i] = dataIn[i];
 }
 
 for (int i=0; i < 1024; i++){
