@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Datapath
-Sun Apr 28 12:54:02 2019
+Sun Apr 28 14:47:07 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -13,29 +13,28 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: reg_sig:ff_1
- 12. Parameter Settings for User Entity Instance: reg_sig:ff_2
- 13. Parameter Settings for User Entity Instance: Adder:sommatore
- 14. Parameter Settings for User Entity Instance: reg_sig:ff_3
- 15. Parameter Settings for User Entity Instance: reg_sig:ff_4
- 16. Parameter Settings for User Entity Instance: counter_Nbit:cnt_1
- 17. Parameter Settings for User Entity Instance: Counter_positivi:cnt_2|HA:HalfAdder
- 18. Parameter Settings for User Entity Instance: Counter_positivi:cnt_2|reg_unsigned:reg
- 19. Port Connectivity Checks: "Counter_positivi:cnt_2|HA:HalfAdder"
- 20. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:9:TFF_X"
- 21. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:8:TFF_X"
- 22. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:7:TFF_X"
- 23. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:6:TFF_X"
- 24. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:5:TFF_X"
- 25. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:4:TFF_X"
- 26. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:3:TFF_X"
- 27. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:2:TFF_X"
- 28. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:1:TFF_X"
- 29. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:0:TFF_X"
- 30. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: reg_sig:ff_1
+ 11. Parameter Settings for User Entity Instance: reg_sig:ff_2
+ 12. Parameter Settings for User Entity Instance: Adder:sommatore
+ 13. Parameter Settings for User Entity Instance: reg_sig:ff_3
+ 14. Parameter Settings for User Entity Instance: reg_sig:ff_4
+ 15. Parameter Settings for User Entity Instance: counter_Nbit:cnt_1
+ 16. Parameter Settings for User Entity Instance: Counter_positivi:cnt_2|HA:HalfAdder
+ 17. Parameter Settings for User Entity Instance: Counter_positivi:cnt_2|reg_unsigned:reg
+ 18. Port Connectivity Checks: "Counter_positivi:cnt_2|HA:HalfAdder"
+ 19. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:9:TFF_X"
+ 20. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:8:TFF_X"
+ 21. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:7:TFF_X"
+ 22. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:6:TFF_X"
+ 23. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:5:TFF_X"
+ 24. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:4:TFF_X"
+ 25. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:3:TFF_X"
+ 26. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:2:TFF_X"
+ 27. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:1:TFF_X"
+ 28. Port Connectivity Checks: "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:0:TFF_X"
+ 29. Analysis & Synthesis Messages
 
 
 
@@ -61,16 +60,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 28 12:54:02 2019        ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 28 14:47:07 2019        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; Datapath                                     ;
 ; Top-level Entity Name              ; Datapath                                     ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 162                                          ;
-;     Total combinational functions  ; 136                                          ;
+; Total logic elements               ; 140                                          ;
+;     Total combinational functions  ; 114                                          ;
 ;     Dedicated logic registers      ; 67                                           ;
 ; Total registers                    ; 67                                           ;
-; Total pins                         ; 54                                           ;
+; Total pins                         ; 53                                           ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0                                            ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
@@ -167,26 +166,26 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                        ;
-+----------------------------------+-----------------+-----------------------+------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                     ;
-+----------------------------------+-----------------+-----------------------+------------------------------------------------------------------+
-; Adder.vhd                        ; yes             ; User VHDL File        ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Adder.vhd            ;
-; Counter_Nbit.vhd                 ; yes             ; User VHDL File        ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Counter_Nbit.vhd     ;
-; Counter_positivi.vhd             ; yes             ; User VHDL File        ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Counter_positivi.vhd ;
-; Datapath.vhd                     ; yes             ; User VHDL File        ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Datapath.vhd         ;
-; dflipflop.vhd                    ; yes             ; User VHDL File        ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/dflipflop.vhd        ;
-; HA.vhd                           ; yes             ; User VHDL File        ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/HA.vhd               ;
-; Mux3to1.vhd                      ; yes             ; User VHDL File        ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Mux3to1.vhd          ;
-; Reg_signed.vhd                   ; yes             ; User VHDL File        ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Reg_signed.vhd       ;
-; Reg_unsigned.vhd                 ; yes             ; User VHDL File        ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Reg_unsigned.vhd     ;
-; rounder.vhd                      ; yes             ; User VHDL File        ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/rounder.vhd          ;
-; tflipflop.vhd                    ; yes             ; User VHDL File        ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/tflipflop.vhd        ;
-; shift_r_2.vhd                    ; yes             ; Auto-Found VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/shift_r_2.vhd        ;
-; shift_r_1.vhd                    ; yes             ; Auto-Found VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/shift_r_1.vhd        ;
-; shift_l_4.vhd                    ; yes             ; Auto-Found VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/shift_l_4.vhd        ;
-+----------------------------------+-----------------+-----------------------+------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                     ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+
+; SHIFT_L_4.vhd                    ; yes             ; User VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/SHIFT_L_4.vhd        ;
+; shift_R_1.vhd                    ; yes             ; User VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/shift_R_1.vhd        ;
+; shift_r_2.vhd                    ; yes             ; User VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/shift_r_2.vhd        ;
+; Adder.vhd                        ; yes             ; User VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Adder.vhd            ;
+; Counter_Nbit.vhd                 ; yes             ; User VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Counter_Nbit.vhd     ;
+; Counter_positivi.vhd             ; yes             ; User VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Counter_positivi.vhd ;
+; Datapath.vhd                     ; yes             ; User VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Datapath.vhd         ;
+; dflipflop.vhd                    ; yes             ; User VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/dflipflop.vhd        ;
+; HA.vhd                           ; yes             ; User VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/HA.vhd               ;
+; Mux3to1.vhd                      ; yes             ; User VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Mux3to1.vhd          ;
+; Reg_signed.vhd                   ; yes             ; User VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Reg_signed.vhd       ;
+; Reg_unsigned.vhd                 ; yes             ; User VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Reg_unsigned.vhd     ;
+; rounder.vhd                      ; yes             ; User VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/rounder.vhd          ;
+; tflipflop.vhd                    ; yes             ; User VHDL File  ; D:/scuola/Polito/ESD/lab6/ESD/lab6/Datapath/tflipflop.vhd        ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -194,27 +193,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 162   ;
+; Estimated Total logic elements              ; 140   ;
 ;                                             ;       ;
-; Total combinational functions               ; 136   ;
+; Total combinational functions               ; 114   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 87    ;
-;     -- 3 input functions                    ; 31    ;
-;     -- <=2 input functions                  ; 18    ;
+;     -- 4 input functions                    ; 65    ;
+;     -- 3 input functions                    ; 28    ;
+;     -- <=2 input functions                  ; 21    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 115   ;
+;     -- normal mode                          ; 93    ;
 ;     -- arithmetic mode                      ; 21    ;
 ;                                             ;       ;
 ; Total registers                             ; 67    ;
 ;     -- Dedicated logic registers            ; 67    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 54    ;
-; Maximum fan-out node                        ; RST_n ;
-; Maximum fan-out                             ; 90    ;
-; Total fan-out                               ; 756   ;
-; Average fan-out                             ; 2.94  ;
+; I/O pins                                    ; 53    ;
+; Maximum fan-out node                        ; CLK   ;
+; Maximum fan-out                             ; 67    ;
+; Total fan-out                               ; 664   ;
+; Average fan-out                             ; 2.84  ;
 +---------------------------------------------+-------+
 
 
@@ -223,11 +222,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Library Name ;
 +------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+--------------+
-; |Datapath                          ; 136 (3)           ; 67 (0)       ; 0           ; 0            ; 0       ; 0         ; 54   ; 0            ; |Datapath                                                            ; work         ;
-;    |Adder:sommatore|               ; 69 (69)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Datapath|Adder:sommatore                                            ; work         ;
-;    |Counter_positivi:cnt_2|        ; 21 (0)            ; 11 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Datapath|Counter_positivi:cnt_2                                     ; work         ;
-;       |HA:HalfAdder|               ; 21 (21)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Datapath|Counter_positivi:cnt_2|HA:HalfAdder                        ; work         ;
-;       |reg_unsigned:reg|           ; 0 (0)             ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Datapath|Counter_positivi:cnt_2|reg_unsigned:reg                    ; work         ;
+; |Datapath                          ; 114 (3)           ; 67 (0)       ; 0           ; 0            ; 0       ; 0         ; 53   ; 0            ; |Datapath                                                            ; work         ;
+;    |Adder:sommatore|               ; 57 (57)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Datapath|Adder:sommatore                                            ; work         ;
+;    |Counter_positivi:cnt_2|        ; 11 (0)            ; 11 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Datapath|Counter_positivi:cnt_2                                     ; work         ;
+;       |reg_unsigned:reg|           ; 11 (11)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Datapath|Counter_positivi:cnt_2|reg_unsigned:reg                    ; work         ;
 ;    |Mux3to1:mux_1|                 ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Datapath|Mux3to1:mux_1                                              ; work         ;
 ;    |Mux3to1:mux_2|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Datapath|Mux3to1:mux_2                                              ; work         ;
 ;    |counter_Nbit:cnt_1|            ; 13 (3)            ; 10 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Datapath|counter_Nbit:cnt_1                                         ; work         ;
@@ -260,39 +258,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Adder:sommatore|DATA_OUT[0]                         ; EN_ADDER            ; yes                    ;
-; Adder:sommatore|DATA_OUT[11]                        ; EN_ADDER            ; yes                    ;
-; Adder:sommatore|DATA_OUT[10]                        ; EN_ADDER            ; yes                    ;
-; Adder:sommatore|DATA_OUT[9]                         ; EN_ADDER            ; yes                    ;
-; Adder:sommatore|DATA_OUT[8]                         ; EN_ADDER            ; yes                    ;
-; Adder:sommatore|DATA_OUT[1]                         ; EN_ADDER            ; yes                    ;
-; Adder:sommatore|DATA_OUT[2]                         ; EN_ADDER            ; yes                    ;
-; Adder:sommatore|DATA_OUT[3]                         ; EN_ADDER            ; yes                    ;
-; Adder:sommatore|DATA_OUT[4]                         ; EN_ADDER            ; yes                    ;
-; Adder:sommatore|DATA_OUT[5]                         ; EN_ADDER            ; yes                    ;
-; Adder:sommatore|DATA_OUT[6]                         ; EN_ADDER            ; yes                    ;
-; Counter_positivi:cnt_2|HA:HalfAdder|OUT_HA[0]       ; EN_CNT_2            ; yes                    ;
-; Counter_positivi:cnt_2|HA:HalfAdder|OUT_HA[1]       ; EN_CNT_2            ; yes                    ;
-; Counter_positivi:cnt_2|HA:HalfAdder|OUT_HA[2]       ; EN_CNT_2            ; yes                    ;
-; Counter_positivi:cnt_2|HA:HalfAdder|OUT_HA[3]       ; EN_CNT_2            ; yes                    ;
-; Counter_positivi:cnt_2|HA:HalfAdder|OUT_HA[4]       ; EN_CNT_2            ; yes                    ;
-; Counter_positivi:cnt_2|HA:HalfAdder|OUT_HA[5]       ; EN_CNT_2            ; yes                    ;
-; Counter_positivi:cnt_2|HA:HalfAdder|OUT_HA[6]       ; EN_CNT_2            ; yes                    ;
-; Counter_positivi:cnt_2|HA:HalfAdder|OUT_HA[7]       ; EN_CNT_2            ; yes                    ;
-; Counter_positivi:cnt_2|HA:HalfAdder|OUT_HA[8]       ; EN_CNT_2            ; yes                    ;
-; Counter_positivi:cnt_2|HA:HalfAdder|OUT_HA[9]       ; EN_CNT_2            ; yes                    ;
-; Counter_positivi:cnt_2|HA:HalfAdder|OUT_HA[10]      ; EN_CNT_2            ; yes                    ;
-; Adder:sommatore|DATA_OUT[7]                         ; EN_ADDER            ; yes                    ;
-; Number of user-specified and inferred latches = 23  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
@@ -303,7 +268,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 67    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 49    ;
+; Number of registers using Clock Enable       ; 48    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -507,8 +472,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sun Apr 28 12:53:59 2019
+    Info: Processing started: Sun Apr 28 14:47:04 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Datapath -c Datapath
+Info: Found 2 design units, including 1 entities, in source file shift_l_4.vhd
+    Info: Found design unit 1: shift_l_4-structural
+    Info: Found entity 1: shift_l_4
+Info: Found 2 design units, including 1 entities, in source file shift_r_1.vhd
+    Info: Found design unit 1: shift_r_1-structural
+    Info: Found entity 1: shift_r_1
+Info: Found 2 design units, including 1 entities, in source file shift_r_2.vhd
+    Info: Found design unit 1: shift_r_2-structural
+    Info: Found entity 1: shift_r_2
 Info: Found 2 design units, including 1 entities, in source file adder.vhd
     Info: Found design unit 1: Adder-behaviour
     Info: Found entity 1: Adder
@@ -546,17 +520,8 @@ Info: Found 2 design units, including 1 entities, in source file tflipflop.vhd
     Info: Found design unit 1: tflipflop-structural
     Info: Found entity 1: tflipflop
 Info: Elaborating entity "Datapath" for the top level hierarchy
-Warning: Using design file shift_r_2.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info: Found design unit 1: shift_r_2-structural
-    Info: Found entity 1: shift_r_2
 Info: Elaborating entity "shift_r_2" for hierarchy "shift_r_2:shift_right_2"
-Warning: Using design file shift_r_1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info: Found design unit 1: shift_r_1-structural
-    Info: Found entity 1: shift_r_1
 Info: Elaborating entity "shift_r_1" for hierarchy "shift_r_1:shift_right_1"
-Warning: Using design file shift_l_4.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info: Found design unit 1: shift_l_4-structural
-    Info: Found entity 1: shift_l_4
 Info: Elaborating entity "shift_l_4" for hierarchy "shift_l_4:shift_left_4"
 Info: Elaborating entity "reg_sig" for hierarchy "reg_sig:ff_1"
 Info: Elaborating entity "Mux3to1" for hierarchy "Mux3to1:mux_1"
@@ -573,19 +538,6 @@ Info (10041): Inferred latch for "OUT_DATA[9]" at Mux3to1.vhd(13)
 Info (10041): Inferred latch for "OUT_DATA[10]" at Mux3to1.vhd(13)
 Info (10041): Inferred latch for "OUT_DATA[11]" at Mux3to1.vhd(13)
 Info: Elaborating entity "Adder" for hierarchy "Adder:sommatore"
-Warning (10631): VHDL Process Statement warning at Adder.vhd(19): inferring latch(es) for signal or variable "DATA_OUT", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "DATA_OUT[0]" at Adder.vhd(19)
-Info (10041): Inferred latch for "DATA_OUT[1]" at Adder.vhd(19)
-Info (10041): Inferred latch for "DATA_OUT[2]" at Adder.vhd(19)
-Info (10041): Inferred latch for "DATA_OUT[3]" at Adder.vhd(19)
-Info (10041): Inferred latch for "DATA_OUT[4]" at Adder.vhd(19)
-Info (10041): Inferred latch for "DATA_OUT[5]" at Adder.vhd(19)
-Info (10041): Inferred latch for "DATA_OUT[6]" at Adder.vhd(19)
-Info (10041): Inferred latch for "DATA_OUT[7]" at Adder.vhd(19)
-Info (10041): Inferred latch for "DATA_OUT[8]" at Adder.vhd(19)
-Info (10041): Inferred latch for "DATA_OUT[9]" at Adder.vhd(19)
-Info (10041): Inferred latch for "DATA_OUT[10]" at Adder.vhd(19)
-Info (10041): Inferred latch for "DATA_OUT[11]" at Adder.vhd(19)
 Info: Elaborating entity "reg_sig" for hierarchy "reg_sig:ff_3"
 Info: Elaborating entity "rounder" for hierarchy "rounder:rounding"
 Info: Elaborating entity "counter_Nbit" for hierarchy "counter_Nbit:cnt_1"
@@ -594,18 +546,6 @@ Info: Elaborating entity "tflipflop" for hierarchy "counter_Nbit:cnt_1|tflipflop
 Info: Elaborating entity "dflipflop" for hierarchy "counter_Nbit:cnt_1|tflipflop:\GEN_CNT:0:TFF_X|dflipflop:ff"
 Info: Elaborating entity "Counter_positivi" for hierarchy "Counter_positivi:cnt_2"
 Info: Elaborating entity "HA" for hierarchy "Counter_positivi:cnt_2|HA:HalfAdder"
-Warning (10631): VHDL Process Statement warning at HA.vhd(17): inferring latch(es) for signal or variable "OUT_HA", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "OUT_HA[0]" at HA.vhd(17)
-Info (10041): Inferred latch for "OUT_HA[1]" at HA.vhd(17)
-Info (10041): Inferred latch for "OUT_HA[2]" at HA.vhd(17)
-Info (10041): Inferred latch for "OUT_HA[3]" at HA.vhd(17)
-Info (10041): Inferred latch for "OUT_HA[4]" at HA.vhd(17)
-Info (10041): Inferred latch for "OUT_HA[5]" at HA.vhd(17)
-Info (10041): Inferred latch for "OUT_HA[6]" at HA.vhd(17)
-Info (10041): Inferred latch for "OUT_HA[7]" at HA.vhd(17)
-Info (10041): Inferred latch for "OUT_HA[8]" at HA.vhd(17)
-Info (10041): Inferred latch for "OUT_HA[9]" at HA.vhd(17)
-Info (10041): Inferred latch for "OUT_HA[10]" at HA.vhd(17)
 Info: Elaborating entity "reg_unsigned" for hierarchy "Counter_positivi:cnt_2|reg_unsigned:reg"
 Warning: LATCH primitive "Mux3to1:mux_2|OUT_DATA[0]" is permanently enabled
 Warning: LATCH primitive "Mux3to1:mux_2|OUT_DATA[1]" is permanently enabled
@@ -633,14 +573,14 @@ Warning: LATCH primitive "Mux3to1:mux_1|OUT_DATA[10]" is permanently enabled
 Warning: LATCH primitive "Mux3to1:mux_1|OUT_DATA[11]" is permanently enabled
 Warning: Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "RST_ADDER"
-Info: Implemented 239 device resources after synthesis - the final resource count might be different
-    Info: Implemented 24 input pins
+Info: Implemented 205 device resources after synthesis - the final resource count might be different
+    Info: Implemented 23 input pins
     Info: Implemented 30 output pins
-    Info: Implemented 185 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 32 warnings
+    Info: Implemented 152 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 27 warnings
     Info: Peak virtual memory: 248 megabytes
-    Info: Processing ended: Sun Apr 28 12:54:02 2019
+    Info: Processing ended: Sun Apr 28 14:47:07 2019
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

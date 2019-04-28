@@ -3,10 +3,11 @@ USE ieee.std_logic_1164.all;
 
 ENTITY FSM IS
 	PORT( CLK,RST: IN STD_LOGIC;
-				START, TC_CNT_1, OUT_ROUND_7 : IN STD_LOGIC;
+				START, TC_CNT_1 : IN STD_LOGIC;
+				OUT_ROUND : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
         RESET, EN_CNT_1, CS_MEM_A, WR_MEM_A,
 				RD_MEM_A, CS_MEM_B, WR_MEM_B, RD_MEM_B,	EN_FF_1,
-				EN_FF_2, EN_FF_3, EN_FF_4, EN_ADDER_1, SUB_ADDER_1, 
+				EN_FF_2, EN_FF_3, EN_FF_4, SUB_ADDER_1, 
 				EN_ROUND, EN_CNT_2, DONE : OUT STD_LOGIC;
 				SEL_MUX_1, SEL_MUX_2 : OUT STD_LOGIC_VECTOR(1 DOWNTO 0));
 END FSM;
@@ -18,7 +19,7 @@ ARCHITECTURE Behavioural OF FSM IS
 
 	BEGIN
 	
-	stateProgression: PROCESS(CLK, START, PS, OUT_ROUND_7, TC_CNT_1) --individuo il next state
+	stateProgression: PROCESS(CLK, START, PS, OUT_ROUND, TC_CNT_1) --individuo il next state
 		BEGIN
 		CASE PS IS
 			WHEN IDLE=>	
@@ -45,7 +46,7 @@ ARCHITECTURE Behavioural OF FSM IS
 				NS <= S5;
 								
 			WHEN S5=>	
-				IF(OUT_ROUND_7 = '0') THEN 
+				IF(OUT_ROUND(7) = '0' and not (OUT_ROUND = "00000000")) THEN 
 					NS <= S6;
 				ELSE
 					NS <= S7;
@@ -102,7 +103,6 @@ ARCHITECTURE Behavioural OF FSM IS
 		EN_FF_2 <= '0';
 		EN_FF_3 <= '0';
 		EN_FF_4 <= '0';
-		EN_ADDER_1 <= '0';
 		SUB_ADDER_1 <= '0';
 		EN_ROUND <= '0';
 		EN_CNT_2 <= '0';
@@ -125,7 +125,6 @@ ARCHITECTURE Behavioural OF FSM IS
 				CS_MEM_A <= '1';
 				RD_MEM_A <= '1';
 				SUB_ADDER_1 <= '1';
-				EN_ADDER_1 <= '1';
 				EN_FF_1 <= '1';
 				EN_FF_2 <= '1';
 				EN_FF_3 <= '1';
@@ -135,12 +134,10 @@ ARCHITECTURE Behavioural OF FSM IS
 				SEL_MUX_2 <= "00";
 				EN_FF_4 <= '1';
 				SUB_ADDER_1 <= '1';
-				EN_ADDER_1 <= '1';
 								
 			WHEN S4=>
 				SEL_MUX_1 <= "00";
 				SEL_MUX_2 <= "10";
-				EN_ADDER_1 <= '1';
 				EN_ROUND <= '1';
 								
 			WHEN S5=>	

@@ -10,7 +10,7 @@ entity Datapath is
 		  DATA_OUT_MEM_A : in signed(7 downto 0);		--Dato in uscita dalla memoria A
 			EN_FF_1, EN_FF_2, EN_FF_3, EN_FF_4 : in std_logic;
 			SEL_MUX1,SEL_MUX2 : in std_logic_vector(1 downto 0);	--Selettori MUX1 e MUX2 (rispettivamente in IN1 ed IN2)
-		  EN_ADDER, RST_ADDER, SUB_ADDER : in std_logic;
+		  RST_ADDER, SUB_ADDER : in std_logic;
 			EN_CNT_1, EN_CNT_2 : in std_logic;
 			EN_ROUND : in std_logic;
 			
@@ -40,7 +40,7 @@ end component;
 
 component Adder
 	generic(N : integer:=11);
-	port(RST,EN,SUB_ADDER: in std_logic;
+	port(SUB_ADDER: in std_logic;
 	     IN_1,IN_2 : in signed(N-1 downto 0);
 	     DATA_OUT : out signed(N-1 downto 0));
 end component;
@@ -99,7 +99,7 @@ begin
 	mux_2: mux3to1 port map(in_1_mux_2, in_2_mux_2, OUT_SHIFT_R_2, SEL_MUX2, OUT_DATA_MUX2);
 	
 	sommatore : adder generic map(N=>12)
-										port map(RST_n, EN_ADDER, SUB_ADDER, OUT_DATA_MUX1, OUT_DATA_MUX2, OUT_ADDER);
+										port map(SUB_ADDER, OUT_DATA_MUX1, OUT_DATA_MUX2, OUT_ADDER);
 	ff_3 :  reg_sig generic map(N=>12)
 									port map(CLK, EN_FF_3, RST_n, OUT_ADDER, Q_FF_3);
 	ff_4 :  reg_sig generic map(N=>12)

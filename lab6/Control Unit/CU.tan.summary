@@ -5,8 +5,8 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 3.797 ns
-From           : OUT_ROUND_7
+Actual Time    : 4.428 ns
+From           : OUT_ROUND[4]
 To             : PS.S7
 From Clock     : --
 To Clock       : CLK
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 9.850 ns
-From           : PS.S7
-To             : EN_CNT_1
+Actual Time    : 9.582 ns
+From           : PS.IDLE
+To             : RESET
 From Clock     : CLK
 To Clock       : --
 Failed Paths   : 0
@@ -25,7 +25,7 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 0.383 ns
+Actual Time    : 0.332 ns
 From           : START
 To             : PS.S1
 From Clock     : --
@@ -36,8 +36,8 @@ Type           : Clock Setup: 'CLK'
 Slack          : N/A
 Required Time  : None
 Actual Time    : Restricted to 420.17 MHz ( period = 2.380 ns )
-From           : PS.IDLE
-To             : PS.S1
+From           : PS.S8
+To             : PS.S8
 From Clock     : CLK
 To Clock       : CLK
 Failed Paths   : 0
