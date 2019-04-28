@@ -8,7 +8,6 @@ END testbench;
 ARCHITECTURE behavioural OF testbench IS                                                
 	SIGNAL CLK : STD_LOGIC;
 	SIGNAL DATA_IN : SIGNED(7 DOWNTO 0);
-	SIGNAL DATA_OUT : SIGNED(7 DOWNTO 0);
 	SIGNAL DONE : STD_LOGIC;
 	SIGNAL OUTPUT_PORT : UNSIGNED(10 DOWNTO 0);
 	SIGNAL RST : STD_LOGIC;
@@ -17,13 +16,12 @@ ARCHITECTURE behavioural OF testbench IS
 	component LAB6
 		port(CLK,START,RST : in std_logic;
 				 DATA_IN : in signed(7 downto 0);
-				 DATA_OUT : out signed(7 downto 0);
 				 DONE : out std_logic;
 				 OUTPUT_PORT : out unsigned(10 downto 0));
 	end component;
 
 	BEGIN
-		DUT: LAB6 PORT MAP (CLK, START, RST, DATA_IN, DATA_OUT, DONE, OUTPUT_PORT);
+		DUT: LAB6 PORT MAP (CLK, START, RST, DATA_IN, DONE, OUTPUT_PORT);
 		
 	clock : PROCESS                                               
 		BEGIN                                                        

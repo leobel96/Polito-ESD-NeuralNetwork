@@ -5,7 +5,6 @@ use ieee.numeric_std.all;
 entity LAB6 is
 	port(CLK,START,RST : in std_logic;
 			 DATA_IN : in signed(7 downto 0);
-		   DATA_OUT : out signed(7 downto 0);
 		   DONE : out std_logic;
 		   OUTPUT_PORT : out unsigned(10 downto 0));
 end entity;
@@ -45,7 +44,7 @@ architecture behavioural of LAB6 is
 				 DATA_OUT : out signed(7 downto 0));
 	end component;
 
-	signal DATA_OUT_MEM_A, OUT_ROUND: signed (7 downto 0);
+	signal DATA_OUT_MEM_A, OUT_ROUND, DATA_OUT_MEM_B: signed (7 downto 0);
 	signal RESET, EN_FF_1, EN_FF_2, EN_FF_3,
 				 EN_FF_4, SUB_ADDER, EN_CNT_1, EN_CNT_2, EN_ROUND, TC_CNT_1, CS_MEM_A,
 				 WR_MEM_A, RD_MEM_A, CS_MEM_B, WR_MEM_B, RD_MEM_B: std_logic;
@@ -58,5 +57,5 @@ architecture behavioural of LAB6 is
 		CU: FSM port map(CLK, RST, START, TC_CNT_1,OUT_ROUND, RESET, EN_CNT_1, CS_MEM_A, WR_MEM_A,
 		RD_MEM_A, CS_MEM_B, WR_MEM_B, RD_MEM_B, EN_FF_1, EN_FF_2, EN_FF_3, EN_FF_4, SUB_ADDER,EN_ROUND, EN_CNT_2, DONE, SEL_MUX1, SEL_MUX2);
 		MEM_A: Memory port map (CLK, CS_MEM_A, WR_MEM_A, RD_MEM_A, ADDRESS_MEM, DATA_IN, DATA_OUT_MEM_A);
-		MEM_B: Memory port map (CLK, CS_MEM_B, WR_MEM_B, RD_MEM_B, ADDRESS_MEM, OUT_ROUND, DATA_OUT);
+		MEM_B: Memory port map (CLK, CS_MEM_B, WR_MEM_B, RD_MEM_B, ADDRESS_MEM, OUT_ROUND, DATA_OUT_MEM_B);
 end architecture;
