@@ -10,7 +10,7 @@ entity Datapath is
 		  DATA_OUT_MEM_A : in signed(7 downto 0);		--Dato in uscita dalla memoria A
 			EN_FF_1, EN_FF_2, EN_FF_3, EN_FF_4 : in std_logic;
 			SEL_MUX1,SEL_MUX2 : in std_logic_vector(1 downto 0);	--Selettori MUX1 e MUX2 (rispettivamente in IN1 ed IN2)
-		  RST_ADDER, SUB_ADDER : in std_logic;
+		    SUB_ADDER : in std_logic;
 			EN_CNT_1, EN_CNT_2 : in std_logic;
 			EN_ROUND : in std_logic;
 			
