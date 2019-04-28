@@ -3,19 +3,20 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity LAB6 is
-port( CLK,START,RST : in std_logic;
-		  DATA_IN : in signed(7 downto 0);
-		  DATA_OUT : out signed(7 downto 0);
+	port(CLK,START,RST : in std_logic;
+			 DATA_IN : in signed(7 downto 0);
+		   DATA_OUT : out signed(7 downto 0);
 		   DONE : out std_logic;
 		   OUTPUT_PORT : out unsigned(10 downto 0));
 end entity;
+
 architecture behavioural of LAB6 is
 component Datapath
 	port(CLK, RST_n: in std_logic;	--CLOCK,RESET
 		  DATA_OUT_MEM_A : in signed(7 downto 0);		--Dato in uscita dalla memoria A
 			EN_FF_1, EN_FF_2, EN_FF_3, EN_FF_4 : in std_logic;
 			SEL_MUX1,SEL_MUX2 : in std_logic_vector(1 downto 0);	--Selettori MUX1 e MUX2 (rispettivamente in IN1 ed IN2)
-		    SUB_ADDER : in std_logic;
+			SUB_ADDER : in std_logic;
 			EN_CNT_1, EN_CNT_2 : in std_logic;
 			EN_ROUND : in std_logic;
 			
@@ -38,7 +39,7 @@ component FSM
 END component;	
    
 component Memory
-	port(CLK, RST, CS, WR, RD : in std_logic;
+	port(CLK, CS, WR, RD : in std_logic;
 	     ADDRESS_MEM : in std_logic_vector(9 downto 0);
 	     DATA_IN : in signed(7 downto 0);
 	     DATA_OUT : out signed(7 downto 0));
@@ -54,6 +55,6 @@ DP: Datapath port map(CLK, RST, DATA_OUT_MEM_A, EN_FF_1, EN_FF_2, EN_FF_3, EN_FF
  EN_CNT_1, EN_CNT_2, EN_ROUND, TC_CNT_1, OUT_ROUND, ADDRESS_MEM, OUTPUT_PORT);     
 CU: FSM port map(CLK, RST, START, TC_CNT_1,OUT_ROUND, RESET, EN_CNT_1, CS_MEM_A, WR_MEM_A,
  RD_MEM_A, CS_MEM_B, WR_MEM_B, RD_MEM_B, EN_FF_1, EN_FF_2, EN_FF_3, EN_FF_4, SUB_ADDER,EN_ROUND, EN_CNT_2, DONE, SEL_MUX1, SEL_MUX2);
- MEM_A: Memory port map (CLK, RST, CS_MEM_A, WR_MEM_A, RD_MEM_A, ADDRESS_MEM, DATA_IN, DATA_OUT_MEM_A);
- MEM_B: Memory port map (CLK, RST, CS_MEM_B, WR_MEM_B, RD_MEM_B, ADDRESS_MEM, OUT_ROUND, DATA_OUT);
+ MEM_A: Memory port map (CLK, CS_MEM_A, WR_MEM_A, RD_MEM_A, ADDRESS_MEM, DATA_IN, DATA_OUT_MEM_A);
+ MEM_B: Memory port map (CLK, CS_MEM_B, WR_MEM_B, RD_MEM_B, ADDRESS_MEM, OUT_ROUND, DATA_OUT);
  end architecture;

@@ -9,7 +9,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity Memory is
-	port(CLK, RST, CS, WR, RD : in std_logic;
+	port(CLK, CS, WR, RD : in std_logic;
 	     ADDRESS_MEM : in std_logic_vector(9 downto 0);
 	     DATA_IN : in signed(7 downto 0);
 	     DATA_OUT : out signed(7 downto 0));
@@ -21,10 +21,9 @@ type MEM is array(0 to 1023) of signed(7 downto 0);
 signal MEMORIA : MEM;
 
 begin
-	RW : process(CLK, CS, RD, WR, RST)	
+	RW : process(CLK, CS, RD, WR)	
 		begin
-		if RST = '0' then
-		elsif CLK'event and CLK = '1' then
+		if CLK'event and CLK = '1' then
 			if CS = '1' then
 				if WR = '0' then
 					MEMORIA(to_integer(unsigned(ADDRESS_MEM))) <= DATA_IN;
