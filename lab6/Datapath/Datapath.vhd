@@ -17,15 +17,26 @@ entity Datapath is
 			TC_CNT_1 : out std_logic;		--Terminal counter a 1023
 			OUT_ROUND : out signed(7 downto 0);
 			ADDRESS_MEM	: out std_logic_vector(9 downto 0);	 --Uscita per l'indirizzo sia della Memoria A che B
-			OUTPUT_PORT : out signed(10 downto 0)	--Uscita che indica le Y positive calcolate
+			OUTPUT_PORT : out unsigned(10 downto 0)	--Uscita che indica le Y positive calcolate
 		  );
 end entity;
 
 architecture behaviour of Datapath is
 
--- SHIFT_R_1
--- SHIFT_R_2
--- SHIFT_L_4
+component shift_r_2
+	port(Q_FF_4: in signed (11 downto 0);
+			 out_shift_r_2: out signed (11 downto 0));
+end component;
+
+component shift_r_1
+	port (data_out_mem_a: in signed (7 downto 0);
+			  out_shift_r_1: out signed (7 downto 0));
+end component;
+
+component shift_l_4
+	port (Q_FF_1: in signed (7 downto 0);
+				out_shift_l_4: out signed (11 downto 0));
+end component;
 
 component Adder
 	generic(N : integer:=11);
@@ -65,10 +76,10 @@ component rounder
 end component;
 
 signal TC_COUNTER : std_logic_vector(9 downto 0);
-signal D_FF_1, Q_FF_1, Q_FF_2, Q_FF_3, Q_FF_4 : signed(11 downto 0);
+signal D_FF_1, Q_FF_1, Q_FF_2, Q_FF_3, Q_FF_4, OUT_SHIFT_R_1, OUT_SHIFT_L_4, OUT_SHIFT_R_2 : signed(11 downto 0);
 signal OUT_DATA_MUX1, OUT_DATA_MUX2, OUT_ADDER: signed(11 downto 0);
-signal OUT_CNT_2 : signed(10 downto 0);
--- OUT_SHIFT_R_1, OUT_SHIFT_L_4, OUT_SHIFT_R_2
+signal OUT_CNT_2 : unsigned(10 downto 0);
+
 begin
 
 	
