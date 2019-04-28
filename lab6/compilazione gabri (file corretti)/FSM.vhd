@@ -14,7 +14,7 @@ END FSM;
 
 ARCHITECTURE Behavioural OF FSM IS
 	
-	TYPE State_type IS (IDLE, S1, S2, S3, S4, S5, S6, S7, S8);
+	TYPE State_type IS (IDLE, S1, S2, S3, S4, S5, S6, S7, S8, S9);
 	SIGNAL PS, NS: State_type;
 
 	BEGIN
@@ -35,42 +35,45 @@ ARCHITECTURE Behavioural OF FSM IS
 				ELSE 
 					NS <= S1;
 				END IF;
-								
+			
 			WHEN S2=>	
 				NS <= S3;
-												
-			WHEN S3=>	 
-				NS <= S4;
 								
-			WHEN S4=>
+			WHEN S3=>	
+				NS <= S4;
+												
+			WHEN S4=>	 
 				NS <= S5;
 								
-			WHEN S5=>	
-				IF(OUT_ROUND(7) = '0' and not (OUT_ROUND = "00000000")) THEN 
-					NS <= S6;
-				ELSE
-					NS <= S7;
-				END IF;
+			WHEN S5=>
+				NS <= S6;
 								
 			WHEN S6=>	
-				IF(TC_CNT_1 = '1') THEN
+				IF(OUT_ROUND(7) = '0' and not (OUT_ROUND = "00000000")) THEN 
+					NS <= S7;
+				ELSE
 					NS <= S8;
+				END IF;
+								
+			WHEN S7=>	
+				IF(TC_CNT_1 = '1') THEN
+					NS <= S9;
 				ELSE
 					NS <= S2;
 				END IF;
 				
-			WHEN S7=>	
+			WHEN S8=>	
 				IF(TC_CNT_1 = '1') THEN
-					NS <= S8;
+					NS <= S9;
 				ELSE
 					NS <= S2;
 				END IF;
 								
-			WHEN S8=>
+			WHEN S9=>
 				IF(START = '1') THEN
 					NS <= IDLE;
 				ELSE
-					NS <= S8;
+					NS <= S9;
 				END IF;
 								
 			WHEN OTHERS => 
@@ -118,40 +121,42 @@ ARCHITECTURE Behavioural OF FSM IS
 				CS_MEM_A <= '1';
 				WR_MEM_A <= '0';
 				EN_CNT_1 <= '1';
-												
-			WHEN S2=>	 
-				SEL_MUX_1 <= "01";
-				SEL_MUX_2 <= "01";
+				
+			WHEN S2=>
 				CS_MEM_A <= '1';
 				RD_MEM_A <= '1';
+												
+			WHEN S3=>	 
+				SEL_MUX_1 <= "01";
+				SEL_MUX_2 <= "01";
 				SUB_ADDER_1 <= '1';
 				EN_FF_1 <= '1';
 				EN_FF_2 <= '1';
 				EN_FF_3 <= '1';
 				
-			WHEN S3=>	 
+			WHEN S4=>	 
 				SEL_MUX_1 <= "10";
 				SEL_MUX_2 <= "00";
 				EN_FF_4 <= '1';
 				SUB_ADDER_1 <= '1';
 								
-			WHEN S4=>
+			WHEN S5=>
 				SEL_MUX_1 <= "00";
 				SEL_MUX_2 <= "10";
 				EN_ROUND <= '1';
 								
-			WHEN S5=>	
+			WHEN S6=>	
 				CS_MEM_B <= '1';
 				WR_MEM_B <= '0';
 								
-			WHEN S6=>	
+			WHEN S7=>	
 				EN_CNT_2 <= '1';
 				EN_CNT_1 <= '1';
 								
-			WHEN S7=>	
+			WHEN S8=>	
 				EN_CNT_1 <= '1';
 				
-			WHEN S8=>
+			WHEN S9=>
 				DONE <= '1';
 								
 			WHEN OTHERS =>

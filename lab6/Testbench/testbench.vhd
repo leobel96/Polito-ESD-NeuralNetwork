@@ -45,7 +45,7 @@ ARCHITECTURE behavioural OF testbench IS
 			wait for 2 ns;
 			START <= '1';
 			
-			DATA_IN<="00000001"; 
+			DATA_IN<="00000100"; 
 			
 			wait for 2 ns;
 			DATA_IN<="00000010"; 
