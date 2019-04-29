@@ -1,4 +1,5 @@
 import random
+import math
 
 inputs = [0,0,0]
 
@@ -14,7 +15,7 @@ def main():
         f_in.write(binary_input + '\n')
         if inputs[2] > 127:
           inputs[2] = inputs[2] - 256
-        output = int(0.5*inputs[2])+int(3.75*inputs[1])-inputs[0]
+        output = math.floor(0.5*inputs[2])+math.floor(3.75*inputs[1])-inputs[0]
         if output > 127:
           output = 127
         elif output < -128:
@@ -24,4 +25,5 @@ def main():
         else:
           binary_output = format(((-output)^255)+1, 'b')
         f_out.write(binary_output + '\n')
+
 main()
