@@ -1,7 +1,7 @@
 incremental_db
 work
 simulation
-db
+db/
 *.wlf
 *.mti
 *.mpf

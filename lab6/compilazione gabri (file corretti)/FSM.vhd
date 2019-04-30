@@ -85,9 +85,9 @@ ARCHITECTURE Behavioural OF FSM IS
 	stateUpdate: PROCESS(CLK,RST) -- aggiorno present state
 		BEGIN
 			IF RST = '0' then
-				PS <= S1;
+				PS <= IDLE;
 			ELSIF CLK'EVENT AND CLK='1' THEN
-					PS<=NS;
+				PS<=NS;
 			END IF;
 	END PROCESS;
 	
@@ -136,7 +136,7 @@ ARCHITECTURE Behavioural OF FSM IS
 				
 			WHEN S4=>	 
 				SEL_MUX_1 <= "10";
-				SEL_MUX_2 <= "00";
+				SEL_MUX_2 <= "01";
 				EN_FF_4 <= '1';
 				SUB_ADDER_1 <= '1';
 								

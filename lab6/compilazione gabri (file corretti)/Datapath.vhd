@@ -47,7 +47,7 @@ end component;
 
 component counter_Nbit
 	generic(N : integer := 16);
-	port(EN, CLK, RST : in std_logic;
+	port(EN, CLK, RST_n : in std_logic;
 		   OUT_CNT : out std_logic_vector(N-1 downto 0));
 end component;
 
@@ -85,7 +85,7 @@ begin
 
 	shift_right_2 : shift_r_2 port map (Q_FF_4, out_shift_r_2);
 	shift_right_1 : shift_r_1 port map(data_out_mem_a, out_shift_r_1);
-	shift_left_4 : shift_l_4 port map(Q_FF_1, out_shift_l_4);
+	shift_left_4 : shift_l_4 port map(Q_FF_2, out_shift_l_4);
 	
 	D_FF_1 <= DATA_OUT_MEM_A;
 	ff_1 : reg_sig generic map(N=>8)

@@ -31,11 +31,10 @@ ARCHITECTURE behavioural OF testbench IS
 			wait for 1 ns;
 	END PROCESS clock;    
 																				 
-	always : PROCESS                                              																																								
+	always : PROCESS	
 		BEGIN                                                         
 			RST <= '0';
 			START <= '0';
-			DATA_IN <="00000000";
 			
 			wait for 4 ns;
 			RST <= '1';
@@ -43,7 +42,8 @@ ARCHITECTURE behavioural OF testbench IS
 			wait for 2 ns;
 			START <= '1';
 			
-			DATA_IN<="00000100"; 
+			wait for 2 ns;
+			DATA_IN<="10000100"; 
 			
 			wait for 2 ns;
 			DATA_IN<="00000010"; 
