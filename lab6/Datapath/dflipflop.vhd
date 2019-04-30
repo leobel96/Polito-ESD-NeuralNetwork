@@ -10,10 +10,12 @@ ARCHITECTURE Behavior OF dflipflop IS
 BEGIN
   PROCESS (Clock, Resetn)
     BEGIN
-      IF (Resetn = '0') THEN -- asynchronous clear
-        Q <= '0';
-      ELSIF (Clock'EVENT AND Clock = '1') THEN
-        Q <= D;
-    END IF;
+      IF (Clock'EVENT AND Clock = '1') THEN
+				IF (Resetn = '0') THEN -- synchronous clear
+					Q <= '0';
+				ELSE
+					Q <= D;
+				END IF;
+			END IF;
   END PROCESS;
 END Behavior;

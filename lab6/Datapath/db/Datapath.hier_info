@@ -11,7 +11,7 @@ RST_n => reg_sig:ff_2.RST
 RST_n => reg_sig:ff_3.RST
 RST_n => reg_sig:ff_4.RST
 RST_n => rounder:rounding.RST
-RST_n => counter_Nbit:cnt_1.RST
+RST_n => counter_Nbit:cnt_1.RST_n
 RST_n => Counter_positivi:cnt_2.RST
 DATA_OUT_MEM_A[0] => shift_r_1:shift_right_1.data_out_mem_a[0]
 DATA_OUT_MEM_A[0] => reg_sig:ff_1.D[0]
@@ -37,7 +37,6 @@ SEL_MUX1[0] => Mux3to1:mux_1.SEL[0]
 SEL_MUX1[1] => Mux3to1:mux_1.SEL[1]
 SEL_MUX2[0] => Mux3to1:mux_2.SEL[0]
 SEL_MUX2[1] => Mux3to1:mux_2.SEL[1]
-RST_ADDER => ~NO_FANOUT~
 SUB_ADDER => Adder:sommatore.SUB_ADDER
 EN_CNT_1 => counter_Nbit:cnt_1.EN
 EN_CNT_2 => Counter_positivi:cnt_2.EN
@@ -592,14 +591,14 @@ CLK => OUT_ROUND[4]~reg0.CLK
 CLK => OUT_ROUND[5]~reg0.CLK
 CLK => OUT_ROUND[6]~reg0.CLK
 CLK => OUT_ROUND[7]~reg0.CLK
-EN => OUT_ROUND.OUTPUTSELECT
-EN => OUT_ROUND.OUTPUTSELECT
-EN => OUT_ROUND.OUTPUTSELECT
-EN => OUT_ROUND.OUTPUTSELECT
-EN => OUT_ROUND.OUTPUTSELECT
-EN => OUT_ROUND.OUTPUTSELECT
-EN => OUT_ROUND.OUTPUTSELECT
-EN => OUT_ROUND.OUTPUTSELECT
+EN => OUT_ROUND[0]~reg0.ENA
+EN => OUT_ROUND[7]~reg0.ENA
+EN => OUT_ROUND[6]~reg0.ENA
+EN => OUT_ROUND[5]~reg0.ENA
+EN => OUT_ROUND[4]~reg0.ENA
+EN => OUT_ROUND[3]~reg0.ENA
+EN => OUT_ROUND[2]~reg0.ENA
+EN => OUT_ROUND[1]~reg0.ENA
 RST => OUT_ROUND[0]~reg0.ACLR
 RST => OUT_ROUND[1]~reg0.ACLR
 RST => OUT_ROUND[2]~reg0.ACLR
@@ -627,7 +626,7 @@ IN_ROUND[11] => OUT_ROUND.DATAB
 IN_ROUND[11] => OUT_ROUND.DATAB
 IN_ROUND[11] => OUT_ROUND.DATAB
 IN_ROUND[11] => OUT_ROUND.DATAB
-IN_ROUND[11] => OUT_ROUND.DATAB
+IN_ROUND[11] => OUT_ROUND[7]~reg0.DATAIN
 OUT_ROUND[0] <= OUT_ROUND[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 OUT_ROUND[1] <= OUT_ROUND[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 OUT_ROUND[2] <= OUT_ROUND[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -651,16 +650,16 @@ CLK => tflipflop:GEN_CNT:6:TFF_X.clock
 CLK => tflipflop:GEN_CNT:7:TFF_X.clock
 CLK => tflipflop:GEN_CNT:8:TFF_X.clock
 CLK => tflipflop:GEN_CNT:9:TFF_X.clock
-RST => tflipflop:GEN_CNT:0:TFF_X.clear
-RST => tflipflop:GEN_CNT:1:TFF_X.clear
-RST => tflipflop:GEN_CNT:2:TFF_X.clear
-RST => tflipflop:GEN_CNT:3:TFF_X.clear
-RST => tflipflop:GEN_CNT:4:TFF_X.clear
-RST => tflipflop:GEN_CNT:5:TFF_X.clear
-RST => tflipflop:GEN_CNT:6:TFF_X.clear
-RST => tflipflop:GEN_CNT:7:TFF_X.clear
-RST => tflipflop:GEN_CNT:8:TFF_X.clear
-RST => tflipflop:GEN_CNT:9:TFF_X.clear
+RST_n => tflipflop:GEN_CNT:0:TFF_X.clear
+RST_n => tflipflop:GEN_CNT:1:TFF_X.clear
+RST_n => tflipflop:GEN_CNT:2:TFF_X.clear
+RST_n => tflipflop:GEN_CNT:3:TFF_X.clear
+RST_n => tflipflop:GEN_CNT:4:TFF_X.clear
+RST_n => tflipflop:GEN_CNT:5:TFF_X.clear
+RST_n => tflipflop:GEN_CNT:6:TFF_X.clear
+RST_n => tflipflop:GEN_CNT:7:TFF_X.clear
+RST_n => tflipflop:GEN_CNT:8:TFF_X.clear
+RST_n => tflipflop:GEN_CNT:9:TFF_X.clear
 OUT_CNT[0] <= tflipflop:GEN_CNT:0:TFF_X.Q
 OUT_CNT[1] <= tflipflop:GEN_CNT:1:TFF_X.Q
 OUT_CNT[2] <= tflipflop:GEN_CNT:2:TFF_X.Q
@@ -683,9 +682,9 @@ Q <= dflipflop:ff.Q
 
 
 |Datapath|counter_Nbit:cnt_1|tflipflop:\GEN_CNT:0:TFF_X|dflipflop:ff
-D => Q~reg0.DATAIN
+D => Q.DATAB
 Clock => Q~reg0.CLK
-Resetn => Q~reg0.ACLR
+Resetn => Q.OUTPUTSELECT
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -699,9 +698,9 @@ Q <= dflipflop:ff.Q
 
 
 |Datapath|counter_Nbit:cnt_1|tflipflop:\GEN_CNT:1:TFF_X|dflipflop:ff
-D => Q~reg0.DATAIN
+D => Q.DATAB
 Clock => Q~reg0.CLK
-Resetn => Q~reg0.ACLR
+Resetn => Q.OUTPUTSELECT
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -715,9 +714,9 @@ Q <= dflipflop:ff.Q
 
 
 |Datapath|counter_Nbit:cnt_1|tflipflop:\GEN_CNT:2:TFF_X|dflipflop:ff
-D => Q~reg0.DATAIN
+D => Q.DATAB
 Clock => Q~reg0.CLK
-Resetn => Q~reg0.ACLR
+Resetn => Q.OUTPUTSELECT
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -731,9 +730,9 @@ Q <= dflipflop:ff.Q
 
 
 |Datapath|counter_Nbit:cnt_1|tflipflop:\GEN_CNT:3:TFF_X|dflipflop:ff
-D => Q~reg0.DATAIN
+D => Q.DATAB
 Clock => Q~reg0.CLK
-Resetn => Q~reg0.ACLR
+Resetn => Q.OUTPUTSELECT
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -747,9 +746,9 @@ Q <= dflipflop:ff.Q
 
 
 |Datapath|counter_Nbit:cnt_1|tflipflop:\GEN_CNT:4:TFF_X|dflipflop:ff
-D => Q~reg0.DATAIN
+D => Q.DATAB
 Clock => Q~reg0.CLK
-Resetn => Q~reg0.ACLR
+Resetn => Q.OUTPUTSELECT
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -763,9 +762,9 @@ Q <= dflipflop:ff.Q
 
 
 |Datapath|counter_Nbit:cnt_1|tflipflop:\GEN_CNT:5:TFF_X|dflipflop:ff
-D => Q~reg0.DATAIN
+D => Q.DATAB
 Clock => Q~reg0.CLK
-Resetn => Q~reg0.ACLR
+Resetn => Q.OUTPUTSELECT
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -779,9 +778,9 @@ Q <= dflipflop:ff.Q
 
 
 |Datapath|counter_Nbit:cnt_1|tflipflop:\GEN_CNT:6:TFF_X|dflipflop:ff
-D => Q~reg0.DATAIN
+D => Q.DATAB
 Clock => Q~reg0.CLK
-Resetn => Q~reg0.ACLR
+Resetn => Q.OUTPUTSELECT
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -795,9 +794,9 @@ Q <= dflipflop:ff.Q
 
 
 |Datapath|counter_Nbit:cnt_1|tflipflop:\GEN_CNT:7:TFF_X|dflipflop:ff
-D => Q~reg0.DATAIN
+D => Q.DATAB
 Clock => Q~reg0.CLK
-Resetn => Q~reg0.ACLR
+Resetn => Q.OUTPUTSELECT
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -811,9 +810,9 @@ Q <= dflipflop:ff.Q
 
 
 |Datapath|counter_Nbit:cnt_1|tflipflop:\GEN_CNT:8:TFF_X|dflipflop:ff
-D => Q~reg0.DATAIN
+D => Q.DATAB
 Clock => Q~reg0.CLK
-Resetn => Q~reg0.ACLR
+Resetn => Q.OUTPUTSELECT
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -827,9 +826,9 @@ Q <= dflipflop:ff.Q
 
 
 |Datapath|counter_Nbit:cnt_1|tflipflop:\GEN_CNT:9:TFF_X|dflipflop:ff
-D => Q~reg0.DATAIN
+D => Q.DATAB
 Clock => Q~reg0.CLK
-Resetn => Q~reg0.ACLR
+Resetn => Q.OUTPUTSELECT
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -28,8 +28,6 @@ begin
 				 else
 					OUT_ROUND <= IN_ROUND(11) & IN_ROUND(6 downto 0);
 				end if;
-			else
-				OUT_ROUND <= (others =>'0');
 			end if;
 		 end if;
 	end process;

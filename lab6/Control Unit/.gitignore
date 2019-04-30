@@ -1,6 +1,11 @@
-db
+incremental_db/
+simulation/
+*.wlf
+*.mti
+*.mpf
 *.rpt
 *.done
 *.summary
 *.jdi
+*.sof
 *.sof
