@@ -1,15 +1,16 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+
 ENTITY FSM IS
 	PORT( CLK,RST: IN STD_LOGIC;
 				START, TC_CNT_1 : IN STD_LOGIC;
 				OUT_ROUND : IN signed(7 DOWNTO 0);
         RESET, EN_CNT_1, CS_MEM_A, WR_MEM_A,
-				RD_MEM_A, CS_MEM_B, WR_MEM_B, RD_MEM_B,	EN_FF_1,
-				EN_FF_2, EN_FF_3, EN_FF_4, SUB_ADDER_1, 
-				EN_ROUND, EN_CNT_2, DONE : OUT STD_LOGIC;
-				SEL_MUX_1, SEL_MUX_2 : OUT STD_LOGIC_VECTOR(1 DOWNTO 0));
+				RD_MEM_A, CS_MEM_B, WR_MEM_B, RD_MEM_B,	EN_REG_1,
+				EN_REG_2, EN_REG_3, EN_REG_4, SUB_ADDER_1, 
+				EN_ROUND, EN_CNT_2, SEL_MUX_2, DONE : OUT STD_LOGIC;
+				SEL_MUX_1 : OUT STD_LOGIC_VECTOR(1 DOWNTO 0));
 END FSM;
 
 ARCHITECTURE Behavioural OF FSM IS
@@ -102,15 +103,15 @@ ARCHITECTURE Behavioural OF FSM IS
 		CS_MEM_B <= '0';
 		WR_MEM_B <= '1';
 		RD_MEM_B <= '0';
-		EN_FF_1 <= '0';
-		EN_FF_2 <= '0';
-		EN_FF_3 <= '0';
-		EN_FF_4 <= '0';
+		EN_REG_1 <= '0';
+		EN_REG_2 <= '0';
+		EN_REG_3 <= '0';
+		EN_REG_4 <= '0';
 		SUB_ADDER_1 <= '0';
 		EN_ROUND <= '0';
 		EN_CNT_2 <= '0';
 		SEL_MUX_1 <= "00";
-		SEL_MUX_2 <= "00";
+		SEL_MUX_2 <= '0';
 		DONE <= '0';
 		
 		CASE PS IS
@@ -128,21 +129,19 @@ ARCHITECTURE Behavioural OF FSM IS
 												
 			WHEN S3=>	 
 				SEL_MUX_1 <= "01";
-				SEL_MUX_2 <= "01";
 				SUB_ADDER_1 <= '1';
-				EN_FF_1 <= '1';
-				EN_FF_2 <= '1';
-				EN_FF_3 <= '1';
+				EN_REG_1 <= '1';
+				EN_REG_2 <= '1';
+				EN_REG_3 <= '1';
 				
 			WHEN S4=>	 
 				SEL_MUX_1 <= "10";
-				SEL_MUX_2 <= "01";
-				EN_FF_4 <= '1';
+				EN_REG_4 <= '1';
 				SUB_ADDER_1 <= '1';
 								
 			WHEN S5=>
 				SEL_MUX_1 <= "00";
-				SEL_MUX_2 <= "10";
+				SEL_MUX_2 <= '1';
 				EN_ROUND <= '1';
 								
 			WHEN S6=>	

@@ -16,7 +16,12 @@ for (int i=0; i < 1024; i++){
   }else{
     memB[i] = memA[i]*0.5 + memA[i-1]*3.75 - memA[i-2];
   }
-  if (memB > 0){
+  if (memB[i] > 127){
+    memB[i] = 127;
+  }else if (memB[i] < -128){
+    memB[i] = -128;
+  }
+  if (memB[i] > 0){
     positiveNum++;
   }
 }

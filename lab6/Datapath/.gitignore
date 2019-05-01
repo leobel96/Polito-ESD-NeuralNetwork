@@ -9,4 +9,5 @@ simulation/
 *.jdi
 *.sof
 *.sof
+*.bak
 db/*.tmw_info
