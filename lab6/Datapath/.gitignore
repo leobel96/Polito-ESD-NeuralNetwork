@@ -1,5 +1,6 @@
 incremental_db/
 simulation/
+db/
 *.wlf
 *.mti
 *.mpf

@@ -4,7 +4,7 @@ K3
 cModel Technology
 dC:\altera\91sp2\modelsim_ase\examples
 Eadder
-Z0 w1556460108
+Z0 w1556818456
 Z1 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
 Z2 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
 Z3 dD:\Scuola\Polito\ESD\lab6\ESD\lab6\Testbench
@@ -59,7 +59,7 @@ R7
 R8
 !s100 >BHd0`o52f>79bAPXg<zA0
 Ecounter_positivi
-Z15 w1556460108
+Z15 w1556818407
 R1
 R2
 R3
@@ -172,12 +172,12 @@ R7
 R8
 !s100 m9fMmo]Hlc@gA8jG^hkH:1
 Eha
-R15
+Z27 w1556818307
 R1
 R2
 R3
-Z27 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/HA.vhd
-Z28 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/HA.vhd
+Z28 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/HA.vhd
+Z29 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/HA.vhd
 l0
 L7
 VX95laGl<KA]<cGUcePFRl0
@@ -201,12 +201,12 @@ R7
 R8
 !s100 ][Yak2W<W<jRKflOBH2zF0
 Elab6
-Z29 w1556704672
+Z30 w1556704672
 R1
 R2
 R3
-Z30 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/LAB6.vhd
-Z31 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/LAB6.vhd
+Z31 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/LAB6.vhd
+Z32 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/LAB6.vhd
 l0
 L5
 VLO:W7]nZBcVeIfCIncYn]0
@@ -230,12 +230,12 @@ R7
 R8
 !s100 ]DEFK>[G[I>>U:WF`[<I:0
 Ememory
-Z32 w1556479091
+Z33 w1556479091
 R1
 R2
 R3
-Z33 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Memory.vhd
-Z34 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Memory.vhd
+Z34 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Memory.vhd
+Z35 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Memory.vhd
 l0
 L11
 VYL7:O@kk?FG5DLEX1A<ME3
@@ -259,12 +259,12 @@ R7
 R8
 !s100 Q5R7PLi2oJkZFV;`;eRH90
 Emux2to1
-Z35 w1556722688
+Z36 w1556722688
 R1
 R2
 R3
-Z36 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/mux2to1.vhd
-Z37 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/mux2to1.vhd
+Z37 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/mux2to1.vhd
+Z38 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/mux2to1.vhd
 l0
 L5
 VfeOZRF;b2zeF=]=8nK29T0
@@ -288,12 +288,12 @@ R10
 R7
 R8
 Emux3to1
-Z38 w1556460109
+Z39 w1556460109
 R1
 R2
 R3
-Z39 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Mux3to1.vhd
-Z40 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Mux3to1.vhd
+Z40 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Mux3to1.vhd
+Z41 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Mux3to1.vhd
 l0
 L5
 VE1EOVRY^54HCHPLRNIaN33
@@ -317,12 +317,12 @@ R7
 R8
 !s100 V4VK:SC0kLHAGzd>UXZ?_1
 Emux4to1
-Z41 w1556722630
+Z42 w1556722630
 R1
 R2
 R3
-Z42 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/mux4to1.vhd
-Z43 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/mux4to1.vhd
+Z43 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/mux4to1.vhd
+Z44 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/mux4to1.vhd
 l0
 L5
 VGH3Mf0Qm2<nHLzgif^]oX1
@@ -334,11 +334,11 @@ R8
 Abehaviour
 R1
 R2
-Z44 DEx4 work 7 mux4to1 0 22 GH3Mf0Qm2<nHLzgif^]oX1
+Z45 DEx4 work 7 mux4to1 0 22 GH3Mf0Qm2<nHLzgif^]oX1
 l12
 L11
-Z45 VR7nkBgC3]PL=JG_=`1IOd0
-Z46 !s100 SmLQgn`K0mF7PD3JRh07F2
+Z46 VR7nkBgC3]PL=JG_=`1IOd0
+Z47 !s100 SmLQgn`K0mF7PD3JRh07F2
 R6
 32
 R9
@@ -346,12 +346,12 @@ R10
 R7
 R8
 Ereg_sig
-R38
+Z48 w1556818247
 R1
 R2
 R3
-Z47 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Reg_signed.vhd
-Z48 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Reg_signed.vhd
+Z49 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Reg_signed.vhd
+Z50 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Reg_signed.vhd
 l0
 L5
 V?]i00KGIWF9zNo7lfRX_K1
@@ -375,12 +375,12 @@ R7
 R8
 !s100 :j8[92IdDz_<@02]a=heg0
 Ereg_unsigned
-R38
+Z51 w1556818281
 R1
 R2
 R3
-Z49 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Reg_unsigned.vhd
-Z50 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Reg_unsigned.vhd
+Z52 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Reg_unsigned.vhd
+Z53 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/Reg_unsigned.vhd
 l0
 L5
 VbASW0Na^eb3dZ[=RD<Smi1
@@ -404,12 +404,12 @@ R7
 R8
 !s100 ^TGVU=OO`JNV=DRekAjDM2
 Erounder
-Z51 w1556610135
+Z54 w1556610135
 R1
 R2
 R3
-Z52 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/rounder.vhd
-Z53 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/rounder.vhd
+Z55 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/rounder.vhd
+Z56 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/rounder.vhd
 l0
 L5
 Vk8dL9BR6j3ZM3JW2S420]2
@@ -433,12 +433,12 @@ R7
 R8
 !s100 IBbF6Qe78`3Fl6`PkFe4>2
 Eshift_l_4
-Z54 w1556722884
+Z57 w1556722884
 R1
 R2
 R3
-Z55 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/SHIFT_L_4.vhd
-Z56 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/SHIFT_L_4.vhd
+Z58 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/SHIFT_L_4.vhd
+Z59 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/SHIFT_L_4.vhd
 l0
 L5
 VGnGkQnSD^40B`Jaiko0Tk1
@@ -462,12 +462,12 @@ R7
 R8
 !s100 J<=JPfaBB9RonYPao5]J52
 Eshift_r_1
-Z57 w1556722992
+Z60 w1556722992
 R1
 R2
 R3
-Z58 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/shift_R_1.vhd
-Z59 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/shift_R_1.vhd
+Z61 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/shift_R_1.vhd
+Z62 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/shift_R_1.vhd
 l0
 L5
 V7^^8`V8VBMO6QDQnhY<Fj1
@@ -491,12 +491,12 @@ R7
 R8
 !s100 BH;`M]YAPCcfjAMKPH=;c0
 Eshift_r_2
-Z60 w1556723044
+Z63 w1556723044
 R1
 R2
 R3
-Z61 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/shift_r_2.vhd
-Z62 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/shift_r_2.vhd
+Z64 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/shift_r_2.vhd
+Z65 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/shift_r_2.vhd
 l0
 L5
 VlJLT8]h4`zYa[C^Tciz]21
@@ -520,13 +520,13 @@ R7
 R8
 !s100 W4n_mLXc@YzcL;[mi`OIm3
 Etestbench
-Z63 w1556652196
-Z64 DPx3 std 6 textio 0 22 m2KQDRRhmF833<<DjYdL70
+Z66 w1556652196
+Z67 DPx3 std 6 textio 0 22 m2KQDRRhmF833<<DjYdL70
 R1
 R2
 R3
-Z65 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Testbench/testbench.vhd
-Z66 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Testbench/testbench.vhd
+Z68 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Testbench/testbench.vhd
+Z69 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Testbench/testbench.vhd
 l0
 L6
 VLkiZlT]=j6jYiFW?7489]3
@@ -536,7 +536,7 @@ R7
 R8
 !s100 DKPfZJfD5dc<B:7_Z2zGd3
 Abehavioural
-R64
+R67
 R1
 R2
 DEx4 work 9 testbench 0 22 LkiZlT]=j6jYiFW?7489]3
@@ -545,18 +545,18 @@ L9
 VCe;<gYK452PEYL`0b[ef21
 R6
 32
-Z67 Mx3 4 ieee 14 std_logic_1164
+Z70 Mx3 4 ieee 14 std_logic_1164
 Mx2 4 ieee 11 numeric_std
-Z68 Mx1 3 std 6 textio
+Z71 Mx1 3 std 6 textio
 R7
 R8
 !s100 afWL^95=C]iGzGUm?QKnG0
 Etflipflop
-Z69 w1556460110
+Z72 w1556818349
 R2
 R3
-Z70 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/tflipflop.vhd
-Z71 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/tflipflop.vhd
+Z73 8D:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/tflipflop.vhd
+Z74 FD:/Scuola/Polito/ESD/lab6/ESD/lab6/Datapath/tflipflop.vhd
 l0
 L4
 VzJEO5;1fk<WfYGW2hXO]n1
