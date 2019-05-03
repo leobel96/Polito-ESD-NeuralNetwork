@@ -15,7 +15,7 @@ END FSM;
 
 ARCHITECTURE Behavioural OF FSM IS
 	
-	TYPE State_type IS (IDLE, S1, S2, S3, S4, S5, S6, S7, S8, S9);
+	TYPE State_type IS (IDLE, FILL_MEM_A, ENABLE_MEM_A, OPERATION_1, OPERATION_2, OPERATION_3, WRITE_MEM_B, POSITIVE_OUT, NOT_POSITIVE_OUT, END_STATE);
 	SIGNAL PS, NS: State_type;
 
 	BEGIN
@@ -25,56 +25,56 @@ ARCHITECTURE Behavioural OF FSM IS
 		CASE PS IS
 			WHEN IDLE=>	
 				IF(START = '1') THEN 
-					NS <= S1;
+					NS <= FILL_MEM_A;
 				ELSE
 					NS <= IDLE;
 				END IF;
 						
-			WHEN S1=>	
+			WHEN FILL_MEM_A=>	
 				IF(TC_CNT_1 = '1') THEN 
-					NS <= S2;
+					NS <= ENABLE_MEM_A;
 				ELSE 
-					NS <= S1;
+					NS <= FILL_MEM_A;
 				END IF;
 			
-			WHEN S2=>	
-				NS <= S3;
+			WHEN ENABLE_MEM_A=>	
+				NS <= OPERATION_1;
 								
-			WHEN S3=>	
-				NS <= S4;
+			WHEN OPERATION_1=>	
+				NS <= OPERATION_2;
 												
-			WHEN S4=>	 
-				NS <= S5;
+			WHEN OPERATION_2=>	 
+				NS <= OPERATION_3;
 								
-			WHEN S5=>
-				NS <= S6;
+			WHEN OPERATION_3=>
+				NS <= WRITE_MEM_B;
 								
-			WHEN S6=>	
+			WHEN WRITE_MEM_B=>	
 				IF(OUT_ROUND(7) = '0' and not (OUT_ROUND = "00000000")) THEN 
-					NS <= S7;
+					NS <= POSITIVE_OUT;
 				ELSE
-					NS <= S8;
+					NS <= NOT_POSITIVE_OUT;
 				END IF;
 								
-			WHEN S7=>	
+			WHEN POSITIVE_OUT=>	
 				IF(TC_CNT_1 = '1') THEN
-					NS <= S9;
+					NS <= END_STATE;
 				ELSE
-					NS <= S2;
+					NS <= ENABLE_MEM_A;
 				END IF;
 				
-			WHEN S8=>	
+			WHEN NOT_POSITIVE_OUT=>	
 				IF(TC_CNT_1 = '1') THEN
-					NS <= S9;
+					NS <= END_STATE;
 				ELSE
-					NS <= S2;
+					NS <= ENABLE_MEM_A;
 				END IF;
 								
-			WHEN S9=>
+			WHEN END_STATE=>
 				IF(START = '1') THEN
 					NS <= IDLE;
 				ELSE
-					NS <= S9;
+					NS <= END_STATE;
 				END IF;
 								
 			WHEN OTHERS => 
@@ -118,44 +118,44 @@ ARCHITECTURE Behavioural OF FSM IS
 			WHEN IDLE=>	
 				RESET <= '0';
 								
-			WHEN S1=>	
+			WHEN FILL_MEM_A=>	
 				CS_MEM_A <= '1';
 				WR_MEM_A <= '0';
 				EN_CNT_1 <= '1';
 				
-			WHEN S2=>
+			WHEN ENABLE_MEM_A=>
 				CS_MEM_A <= '1';
 				RD_MEM_A <= '1';
 												
-			WHEN S3=>	 
+			WHEN OPERATION_1=>	 
 				SEL_MUX_1 <= "01";
 				SUB_ADDER_1 <= '1';
 				EN_REG_1 <= '1';
 				EN_REG_2 <= '1';
 				EN_REG_3 <= '1';
 				
-			WHEN S4=>	 
+			WHEN OPERATION_2=>	 
 				SEL_MUX_1 <= "10";
 				EN_REG_4 <= '1';
 				SUB_ADDER_1 <= '1';
 								
-			WHEN S5=>
+			WHEN OPERATION_3=>
 				SEL_MUX_1 <= "00";
 				SEL_MUX_2 <= '1';
 				EN_ROUND <= '1';
 								
-			WHEN S6=>	
+			WHEN WRITE_MEM_B=>	
 				CS_MEM_B <= '1';
 				WR_MEM_B <= '0';
 								
-			WHEN S7=>	
+			WHEN POSITIVE_OUT=>	
 				EN_CNT_2 <= '1';
 				EN_CNT_1 <= '1';
 								
-			WHEN S8=>	
+			WHEN NOT_POSITIVE_OUT=>	
 				EN_CNT_1 <= '1';
 				
-			WHEN S9=>
+			WHEN END_STATE=>
 				DONE <= '1';
 								
 			WHEN OTHERS =>
