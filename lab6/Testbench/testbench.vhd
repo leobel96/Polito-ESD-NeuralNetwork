@@ -63,9 +63,11 @@ ARCHITECTURE behavioural OF testbench IS
 
 			wait for 2 ns;
 			START <= '1';
-			
-			wait for 2 ns;
 			EN_READ <= '1';
+			
+			wait for 2ns;
+			START <= '0';
+			
 
 			wait;
 	END PROCESS;                                          
