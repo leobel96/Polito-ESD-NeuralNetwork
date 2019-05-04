@@ -94,33 +94,27 @@ begin
 	shift_left_4 : shift_l_4 port map(Q_REG_2, out_shift_l_4);
 	
 	D_REG_1 <= DATA_OUT_MEM_A;
-	REG_1 : reg_sig generic map(N=>8)
-									port map(CLK, EN_REG_1, RST_n, D_REG_1, Q_REG_1);	 
-	REG_2 : reg_sig generic map(N=>8)
-									port map(CLK, EN_REG_2, RST_n, Q_REG_1, Q_REG_2);
+	REG_1 : reg_sig generic map(N=>8) port map(CLK, EN_REG_1, RST_n, D_REG_1, Q_REG_1);
+	REG_2 : reg_sig generic map(N=>8) port map(CLK, EN_REG_2, RST_n, Q_REG_1, Q_REG_2);
 	
 	mux_1: mux4to1 port map(Q_REG_3, OUT_SHIFT_R_1, OUT_SHIFT_L_4, "000000000000", SEL_MUX1, OUT_DATA_MUX1);
 	IN_2_MUX_2 <= Q_REG_2(7) & Q_REG_2(7) & Q_REG_2(7) & Q_REG_2(7) & Q_REG_2;
 	mux_2: mux2to1 port map(IN_2_MUX_2, OUT_SHIFT_R_2, SEL_MUX2, OUT_DATA_MUX2);
 	
-	sommatore : adder generic map(N=>12)
-										port map(SUB_ADDER, OUT_DATA_MUX1, OUT_DATA_MUX2, OUT_ADDER);
-	REG_3 :  reg_sig generic map(N=>12)
-									 port map(CLK, EN_REG_3, RST_n, OUT_ADDER, Q_REG_3);
-	REG_4 :  reg_sig generic map(N=>12)
-									 port map(CLK, EN_REG_4, RST_n, OUT_ADDER, Q_REG_4);
+	sommatore : adder generic map(N=>12) port map(SUB_ADDER, OUT_DATA_MUX1, OUT_DATA_MUX2, OUT_ADDER);
+	REG_3 :  reg_sig generic map(N=>12) port map(CLK, EN_REG_3, RST_n, OUT_ADDER, Q_REG_3);
+	REG_4 :  reg_sig generic map(N=>12) port map(CLK, EN_REG_4, RST_n, OUT_ADDER, Q_REG_4);
 					
 	rounding: rounder port map(CLK, EN_ROUND, RST_n, OUT_ADDER, OUT_ROUND);
 	
-	cnt_1 : counter_Nbit generic map(N=>10)
-											 port map(EN_CNT_1, CLK, RST_n, OUT_CNT_1);
+	cnt_1 : counter_Nbit generic map(N=>10) port map(EN_CNT_1, CLK, RST_n, OUT_CNT_1);
 	cnt_2: counter_positivi port map(CLK, RST_n, EN_CNT_2, OUT_CNT_2);
 	
 	OUTPUT_PORT <= OUT_CNT_2;
 	ADDRESS_MEM <= OUT_CNT_1;
 					 
+	--SEGNALE DEL TERMINAL COUNTER
 	TC_CNT_1 <= OUT_CNT_1(9) and OUT_CNT_1(8) and OUT_CNT_1(7) and OUT_CNT_1(6) and 
 							OUT_CNT_1(5) and OUT_CNT_1(4) and OUT_CNT_1(3) and OUT_CNT_1(2) and
-							OUT_CNT_1(1) and OUT_CNT_1(0);	--SEGNALE DEL TERMINAL COUNTER
-	
+							OUT_CNT_1(1) and OUT_CNT_1(0);
 end architecture;

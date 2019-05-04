@@ -10,6 +10,6 @@ end entity;
 
 architecture behavioural of Mux2to1 is
 begin
-		OUT_DATA <=  IN1 when SEL = '0' else
-					 IN2;
+		OUT_DATA <= IN1 when SEL = '0' else
+								IN2;
 end architecture;
